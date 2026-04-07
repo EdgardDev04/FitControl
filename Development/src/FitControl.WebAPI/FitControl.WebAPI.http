@@ -1,0 +1,6 @@
+@FitControl.WebAPI_HostAddress = http://localhost:5101
+
+GET {{FitControl.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../../src/FitControl.Application/FitControl.Application.csproj" />
+  <Project Path="../../src/FitControl.Domain/FitControl.Domain.csproj" />
+  <Project Path="../../src/FitControl.Infrastructure/FitControl.Infrastructure.csproj" />
+  <Project Path="../../src/FitControl.WebAPI/FitControl.WebAPI.csproj" />
+</Solution>
