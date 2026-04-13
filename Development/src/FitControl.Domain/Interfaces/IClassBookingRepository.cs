@@ -7,8 +7,8 @@ namespace FitControl.Domain.Interfaces
     public interface IClassBookingRepository : IGenericRepository<ClassBooking>
     {
         Task GetByDateAsync(DateTime date);
-        Task GetByStatusAsync(BookingStatus status);
-        Task GetByMemberIdAsync(int memberId);
+        Task<IEnumerable<ClassBooking>> GetAllByStatusAsync(BookingStatus status);
+        Task<IEnumerable<ClassBooking>> GetAllByMemberIdAsync(int memberId);
 
     }
 }

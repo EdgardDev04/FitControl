@@ -7,8 +7,8 @@ namespace FitControl.Domain.Interfaces
     public interface IClassSessionRepository : IGenericRepository<ClassSession>
     {
         Task GetByDateRangeAsync(DateTime startDate, DateTime endDate);
-        Task GetByStatusAsync(ClassSessionStatus status);
-        Task GetByTrainerIdAsync(int trainerId);
-        Task GetByClassTypeIdAsync(int classTypeId);
+        Task<IEnumerable<ClassSession>> GetAllByStatusAsync(ClassSessionStatus status);
+        Task<IEnumerable<ClassSession>> GetAllByTrainerIdAsync(int trainerId);
+        Task<IEnumerable<ClassSession>> GetAllByClassTypeIdAsync(int classTypeId);
     }
 }

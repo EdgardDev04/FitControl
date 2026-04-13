@@ -7,6 +7,7 @@ namespace FitControl.Domain.Interfaces
     {
         Task GetByDocumentAsync (string document);
         Task GetByStatusAsync (bool status);
-
+        Task<IEnumerable<Member>> GetAllActiveAsync(); 
+        Task<IEnumerable<Member>> GetAllInactiveAsync();
     }
 }

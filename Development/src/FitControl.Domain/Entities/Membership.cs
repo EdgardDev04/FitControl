@@ -14,5 +14,32 @@ namespace FitControl.Domain.Entities
         public int MemberId { get; private set; }
         public virtual Member Member { get; private set; }
         public virtual ICollection<Payment> Payments { get; private set; } = new List<Payment>();
+
+        public Membership() { }
+
+        public Membership(int memberId, int planId, DateTime startDate, DateTime endDate)
+        {
+            MemberId = memberId;
+            MembershipPlanId = planId;
+            StartDate = startDate;
+            EndDate = endDate;
+            Status = MembershipStatus.Active;
+        }
+
+        public void MarkAsActive() => Status = MembershipStatus.Active;
+        public void MarkAsInactive() => Status = MembershipStatus.Inactive;
+        public void MarkAsExpired() => Status = MembershipStatus.Expired;
+        public void MarkAsCancelled() => Status = MembershipStatus.Cancelled;
+        public void MarkAsSuspended() => Status = MembershipStatus.Suspended;
+        public void MarkAsPendingPayment() => Status = MembershipStatus.PendingPayment;
+
+        public void UpdateStartDate(DateTime newStartDate) => StartDate = newStartDate;
+
+        public void ExtendMembership(int additionalDays)
+        {
+            EndDate = EndDate.AddDays(additionalDays);
+            if (Status == MembershipStatus.Expired)
+                Status = MembershipStatus.Active;
+        }
     }
 }

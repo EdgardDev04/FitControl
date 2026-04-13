@@ -17,9 +17,43 @@ namespace FitControl.Domain.Entities
         public bool IsActive { get; private set; }
         public int GymId { get; private set; }
         public virtual Gym Gym { get; private set; }
-        public virtual ICollection<Membership> Memberships { get; set; } = new List<Membership>();
-        public virtual ICollection<ClassBooking> ClassBookings { get; set; } = new List<ClassBooking>();
-        public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
-        
+        public virtual ICollection<Invoice> Invoices { get; private set; } = new List<Invoice>();
+        public virtual ICollection<ClassBooking> Bookings { get; private set; } = new List<ClassBooking>();
+        public virtual ICollection<Membership> Memberships { get; private set; } = new List<Membership>();
+        public virtual ICollection<Attendance> Attendances { get; private set; } = new List<Attendance>();
+
+
+        public Member() { }
+
+        public int CalculateAge()
+        {
+            var today = DateTime.Today;
+            var age = today.Year - DateOfBirth.Year;
+            if (DateOfBirth.Date > today.AddYears(-age)) age--;
+            return age;
+        }
+
+        public void MarkAsActivate() => IsActive = true;
+
+        public void MarkAsInactivate() => IsActive = false;
+
+        public void UpdateDocumentNumber(string newDocumentNumber)
+        {
+            DocumentNumber = newDocumentNumber;
+        }
+
+        public string GetDocumentNumber() => DocumentNumber;
+
+        public string GetFullName() => $"{FirstName} {LastName}".Trim();
+
+        public void UpdatePhone(string? newPhone)
+        {
+            Phone = newPhone;
+        }
+
+        public void UpdateEmail(Email newEmail)
+        {
+            Email = newEmail;
+        }
     }
 }

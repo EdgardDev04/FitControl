@@ -10,5 +10,19 @@ namespace FitControl.Domain.Entities
         public int DurationInDays { get; private set; }
         public bool IsActive { get; private set; }
         public virtual ICollection<Membership> Memberships { get; private set; } = new List<Membership>();
+
+        public MembershipPlan() { }
+
+        public MembershipPlan(string name, string description, decimal price, int durationInDays)
+        {
+            Name = name;
+            Description = description;
+            Price = price;
+            DurationInDays = durationInDays;
+            IsActive = true;
+        }
+
+        public void MarkAsActive() => IsActive = true;
+        public void MarkAsInactive() => IsActive = false;
     }
 }

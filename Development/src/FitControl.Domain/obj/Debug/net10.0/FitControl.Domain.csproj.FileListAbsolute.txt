@@ -1,0 +1,12 @@
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\bin\Debug\net10.0\FitControl.Domain.deps.json
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\bin\Debug\net10.0\FitControl.Domain.dll
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\bin\Debug\net10.0\FitControl.Domain.pdb
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.AssemblyInfoInputs.cache
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.AssemblyInfo.cs
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.csproj.CoreCompileInputs.cache
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.sourcelink.json
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.dll
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\refint\FitControl.Domain.dll
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\FitControl.Domain.pdb
+D:\PROJECTS\FitControl\Development\src\FitControl.Domain\obj\Debug\net10.0\ref\FitControl.Domain.dll

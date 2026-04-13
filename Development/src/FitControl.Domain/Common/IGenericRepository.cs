@@ -4,10 +4,10 @@ namespace FitControl.Domain.Common
 {
     public interface IGenericRepository<T> where T : BaseEntity
     {
-        Task<T> GetByIdAsync(int id);
-        Task<ICollection<T>> GetAllAsync();
+        Task<T?> GetByIdAsync(int id);
+        Task<IEnumerable<T>> GetAllAsync();
         Task AddAsync(T entity);
-        Task Update(T entity);
-        Task Delete(T entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(T entity);
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitControl.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1e12f86de72b9f781f8c2f115a9ef2bd8b62e2e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8abacf5520abd80f8fbd423f792462915acb10d")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitControl.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitControl.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

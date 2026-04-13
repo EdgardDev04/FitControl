@@ -10,5 +10,23 @@ namespace FitControl.Domain.Entities
         public int GymId { get; private set; }
         public virtual Member Member { get; private set; }
         public virtual Gym Gym { get; private set; }
+
+        public Attendance() { }
+
+        public Attendance(int memberId, int gymId)
+        {
+            MemberId = memberId;
+            GymId = gymId;
+        }
+
+        public void CheckIn()
+        {
+            CheckInTime = DateTime.UtcNow;
+        }
+
+        public void CheckOut()
+        {
+            CheckOutTime = DateTime.UtcNow;
+        }
     }
 }

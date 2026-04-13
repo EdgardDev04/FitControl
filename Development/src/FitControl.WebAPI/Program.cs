@@ -1,4 +1,8 @@
 
+using FitControl.WebAPI.Extensions;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 namespace FitControl.WebAPI
 {
     public class Program
@@ -7,10 +11,20 @@ namespace FitControl.WebAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 
-            builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+                    options.JsonSerializerOptions.Converters.Add(
+                         new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false)
+                     );
+                });
+
+            builder.Services.AddDatabase(builder.Configuration);
+
+            builder.Services.AddInfrastructureServices();
+
             builder.Services.AddOpenApi();
 
             var app = builder.Build();
