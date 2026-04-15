@@ -1,10 +1,12 @@
 ﻿using FitControl.Domain.Base;
+using FitControl.Domain.Enums;
 
 namespace FitControl.Domain.Entities
 {
     public class Invoice : BaseEntity
     {
         public string InvoiceNumber { get; private set; } = string.Empty;
+        public InvoiceStatus Status { get; private set; } = InvoiceStatus.Pending;
         public DateTime IssueDate { get; private set; }
         public decimal SubTotal { get; private set; }
         public decimal Balance { get; private set; }
@@ -33,19 +35,21 @@ namespace FitControl.Domain.Entities
         }
 
 
-        public decimal CalculateTotalAmount()
+        public decimal CalculateTotalAmount() => SubTotal - Discount + Tax;
+        
+        public decimal CalculateBalance() => TotalAmount - (TotalAmount - Balance);
+        
+        public decimal CalculateDiscount(decimal discount) => TotalAmount * discount / 100;
+        
+        public void MarkAsPaid()
         {
-            return SubTotal - Discount + Tax;
+            Status = InvoiceStatus.Paid;
+            Balance = 0;
         }
 
-        public decimal CalculateBalance()
-        {
-            return TotalAmount - (TotalAmount - Balance);
-        }
-
-        public decimal CalculateDiscount(decimal discount)
-        {
-            return TotalAmount * discount / 100;
-        } 
+        public void MarkAsPending() => Status = InvoiceStatus.Pending;
+        public void MarkAsPartiallyPaid() => Status = InvoiceStatus.PartiallyPaid;
+        public void MarkAsOverdue() => Status = InvoiceStatus.Overdue;
+        public void MarkAsCancelled() => Status = InvoiceStatus.Cancelled;
     }
 }

@@ -16,6 +16,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
 
             builder.Property(i => i.InvoiceNumber).HasMaxLength(20);
 
+            builder.Property(i => i.Status);
+
             builder.Property(i => i.IssueDate);
 
             builder.Property(i => i.SubTotal);

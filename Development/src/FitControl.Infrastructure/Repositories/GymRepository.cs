@@ -20,15 +20,15 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(Gym entity) =>  _context.Gyms.Remove(entity);
 
-        public async Task<IEnumerable<Gym>> GetAllAsync() => await _context.Gyms.ToListAsync();
+        public async Task<IEnumerable<Gym>> GetAllAsync() => await _context.Gyms.AsNoTracking().ToListAsync();
 
-        public async Task GetAllAttendancesAsync(int gymId) => await _context.Gyms.Include(g => g.Attendances).ToListAsync();
+        public async Task GetAllAttendancesAsync(int gymId) => await _context.Gyms.AsNoTracking().Include(g => g.Attendances).ToListAsync();
 
-        public async Task GetAllBookingsAsync(int gymId) => await _context.Gyms.Include(g => g.Bookings).ToListAsync();
+        public async Task GetAllBookingsAsync(int gymId) => await _context.Gyms.AsNoTracking().Include(g => g.Bookings).ToListAsync();
 
-        public async Task GetAllMembersAsync(int gymId) => await _context.Gyms.Include(g => g.Members).ToListAsync();
+        public async Task GetAllMembersAsync(int gymId) => await _context.Gyms.AsNoTracking().Include(g => g.Members).ToListAsync();
 
-        public async Task GetAllTrainersAsync(int gymId) => await _context.Gyms.Include(g => g.Trainers).ToListAsync();
+        public async Task GetAllTrainersAsync(int gymId) => await _context.Gyms.AsNoTracking().Include(g => g.Trainers).ToListAsync();
 
         public async Task<Gym?> GetByIdAsync(int id) => await _context.Gyms.FindAsync(id);
 

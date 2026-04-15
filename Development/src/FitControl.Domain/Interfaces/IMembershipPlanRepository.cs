@@ -5,8 +5,8 @@ namespace FitControl.Domain.Interfaces
 {
     public interface IMembershipPlanRepository : IGenericRepository<MembershipPlan>
     {
-        Task GetByNameAsync (string name);
-        Task GetByPriceRangeAsync (decimal minPrice, decimal maxPrice);
-        Task GetActivePlanAsync();
+        Task<MembershipPlan?> GetByNameAsync(string name);
+        Task<IEnumerable<MembershipPlan>> GetByPriceRangeAsync(decimal minPrice, decimal maxPrice);
+        Task<IEnumerable<MembershipPlan>> GetActivePlanAsync();
     }
 }

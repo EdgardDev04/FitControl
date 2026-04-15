@@ -16,6 +16,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
 
             builder.Property(ii => ii.Description).HasMaxLength(200);
 
+            builder.Property(ii => ii.ItemType);
+
             builder.Property(ii => ii.UnitPrice);
 
             builder.Property(ii => ii.Quantity);

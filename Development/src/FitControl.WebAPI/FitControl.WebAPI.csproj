@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FitControl.Application\FitControl.Application.csproj" />
     <ProjectReference Include="..\FitControl.Infrastructure\FitControl.Infrastructure.csproj" />
   </ItemGroup>
 

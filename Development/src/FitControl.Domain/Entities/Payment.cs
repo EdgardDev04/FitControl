@@ -5,7 +5,6 @@ namespace FitControl.Domain.Entities
 {
     public class Payment : BaseEntity
     {
-
         public DateTime PaymentDate { get; private set; }
         public decimal Amount { get; private set; }
         public PaymentMethod Method { get; private set; }
@@ -31,5 +30,9 @@ namespace FitControl.Domain.Entities
         public string GetPaymentMethod => Method.ToString();
 
         public decimal GetAmount => Amount;
+
+        public string GetTransactionReference() => TransactionReference;
+
+        public int GetMemberId() => Membership.Member.Id;
     }
 }

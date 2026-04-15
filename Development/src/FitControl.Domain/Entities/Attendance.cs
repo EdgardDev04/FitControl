@@ -13,10 +13,38 @@ namespace FitControl.Domain.Entities
 
         public Attendance() { }
 
+        public Attendance(int memberId)
+        {
+            CheckInTime = DateTime.Today;
+            MemberId = memberId;
+        }
+
         public Attendance(int memberId, int gymId)
         {
             MemberId = memberId;
             GymId = gymId;
+        }
+        
+        public Attendance(int memberId, int gymId, DateTime checkInTime)
+        {
+            MemberId = memberId;
+            GymId = gymId;
+            CheckInTime = checkInTime;
+        }
+
+        public decimal CalculateFee(decimal hourlyRate)
+        {
+            if (CheckOutTime == null)
+                return 0;
+            var durationInHours = (CheckOutTime.Value - CheckInTime).TotalHours;
+            return (decimal)durationInHours * hourlyRate;
+        }
+
+        public int GetDurationInMinutes()
+        {
+            if (CheckOutTime == null)
+                return 0;
+            return (int)(CheckOutTime.Value - CheckInTime).TotalMinutes;
         }
 
         public void CheckIn()
@@ -28,5 +56,9 @@ namespace FitControl.Domain.Entities
         {
             CheckOutTime = DateTime.UtcNow;
         }
+
+        public DateTime GetCheckInTime() => CheckInTime;
+
+        public DateTime? GetCheckOutTime() => CheckOutTime;
     }
 }

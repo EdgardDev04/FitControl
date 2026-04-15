@@ -21,20 +21,22 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(ClassSession entity) => _context.ClassSessions.Remove(entity);
 
-        public async Task<IEnumerable<ClassSession>> GetAllAsync() => await _context.ClassSessions.ToListAsync();
+        public async Task<IEnumerable<ClassSession>> GetAllAsync() => await _context.ClassSessions.AsNoTracking().ToListAsync();
 
-        public async Task GetByClassTypeIdAsync(int classTypeId) => await _context.ClassSessions.FirstOrDefaultAsync(cs => cs.ClassTypeId == classTypeId);
+        public async Task GetByClassTypeIdAsync(int classTypeId) => await _context.ClassSessions.AsNoTracking().FirstOrDefaultAsync(cs => cs.ClassTypeId == classTypeId);
 
-        public Task GetByDateRangeAsync(DateTime startDate, DateTime endDate) => _context.ClassSessions.Where(cs => cs.StartTime >= startDate && cs.EndTime <= endDate).ToListAsync();      
+        public async Task<ClassSession?> GetByDateAsync(DateTime date) => await _context.ClassSessions.AsNoTracking().FirstOrDefaultAsync(cs => cs.StartTime.Date == date.Date);
+
+        public async Task<IEnumerable<ClassSession>> GetByDateRangeAsync(DateTime startDate, DateTime endDate) => await _context.ClassSessions.AsNoTracking().Where(cs => cs.StartTime >= startDate && cs.EndTime <= endDate).ToListAsync();      
 
         public async Task<ClassSession?> GetByIdAsync(int id) => await _context.ClassSessions.FindAsync(id);
 
-        public async Task<IEnumerable<ClassSession>> GetAllByStatusAsync(ClassSessionStatus status) => await _context.ClassSessions.Where(cs => cs.Status == status).ToListAsync();
+        public async Task<IEnumerable<ClassSession>> GetAllByStatusAsync(ClassSessionStatus status) => await _context.ClassSessions.AsNoTracking().Where(cs => cs.Status == status).ToListAsync();
 
-        public async Task<IEnumerable<ClassSession>> GetAllByTrainerIdAsync(int trainerId) => await _context.ClassSessions.Where(cs => cs.TrainerId == trainerId).ToListAsync();
+        public async Task<IEnumerable<ClassSession>> GetAllByTrainerIdAsync(int trainerId) => await _context.ClassSessions.AsNoTracking().Where(cs => cs.TrainerId == trainerId).ToListAsync();
 
         public async Task UpdateAsync(ClassSession entity) => _context.ClassSessions.Update(entity);
 
-        public async Task<IEnumerable<ClassSession>> GetAllByClassTypeIdAsync(int classTypeId) => await _context.ClassSessions.Where(cs => cs.ClassTypeId == classTypeId).ToListAsync();
+        public async Task<IEnumerable<ClassSession>> GetAllByClassTypeIdAsync(int classTypeId) => await _context.ClassSessions.AsNoTracking().Where(cs => cs.ClassTypeId == classTypeId).ToListAsync();
     }
 }

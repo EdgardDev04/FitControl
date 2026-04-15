@@ -21,13 +21,13 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(Trainer entity) => _context.Trainers.Remove(entity);
 
-        public async Task<IEnumerable<Trainer>> GetAllAsync() => await _context.Trainers.ToListAsync();
+        public async Task<IEnumerable<Trainer>> GetAllAsync() => await _context.Trainers.AsNoTracking().ToListAsync();
 
         public async Task<Trainer?> GetByIdAsync(int id) => await _context.Trainers.FindAsync(id);
 
-        public async Task GetByNameAsync(string name) => await _context.Trainers.FirstOrDefaultAsync(t => t.Name == name);
+        public async Task GetByNameAsync(string name) => await _context.Trainers.AsNoTracking().FirstOrDefaultAsync(t => t.Name == name);
 
-        public async Task GetBySpecialtyAsync(string specialty) => await _context.Trainers.Where(t => t.Specialty == specialty).ToListAsync();
+        public async Task GetBySpecialtyAsync(string specialty) => await _context.Trainers.AsNoTracking().Where(t => t.Specialty == specialty).ToListAsync();
 
         public async Task GetByStatusAsync(TrainerStatus status) => await _context.Trainers.Where(t => t.Status == status).ToListAsync();
 

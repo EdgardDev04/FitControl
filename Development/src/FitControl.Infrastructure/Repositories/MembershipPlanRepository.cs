@@ -20,15 +20,15 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(MembershipPlan entity) => _context.MembershipPlans.Remove(entity);
 
-        public async Task GetActivePlanAsync() => await _context.MembershipPlans.Where(mp => mp.IsActive == true).ToListAsync();
+        public async Task<IEnumerable<MembershipPlan>> GetActivePlanAsync() => await _context.MembershipPlans.AsNoTracking().Where(mp => mp.IsActive == true).ToListAsync();
 
-        public async Task<IEnumerable<MembershipPlan>> GetAllAsync() => await _context.MembershipPlans.ToListAsync();
+        public async Task<IEnumerable<MembershipPlan>> GetAllAsync() => await _context.MembershipPlans.AsNoTracking().ToListAsync();
 
         public async Task<MembershipPlan?> GetByIdAsync(int id) => await _context.MembershipPlans.FindAsync(id);
 
-        public async Task GetByNameAsync(string name) => await _context.MembershipPlans.FirstOrDefaultAsync(mp => mp.Name == name);
+        public async Task<MembershipPlan?> GetByNameAsync(string name) => await _context.MembershipPlans.AsNoTracking().FirstOrDefaultAsync(mp => mp.Name == name);
 
-        public async Task GetByPriceRangeAsync(decimal minPrice, decimal maxPrice) => await _context.MembershipPlans.Where(mp => mp.Price >= maxPrice && mp.Price <= minPrice).ToListAsync();
+        public async Task<IEnumerable<MembershipPlan>> GetByPriceRangeAsync(decimal minPrice, decimal maxPrice) => await _context.MembershipPlans.AsNoTracking().Where(mp => mp.Price >= maxPrice && mp.Price <= minPrice).ToListAsync();
 
         public async Task UpdateAsync(MembershipPlan entity) => _context.MembershipPlans.Update(entity);
     }

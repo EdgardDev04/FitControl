@@ -7,7 +7,7 @@ namespace FitControl.Domain.Interfaces
     {
         Task GetByInvoiceNumberAsynnc(string invoiceNumber);
         Task GetByDateRangeAsync(DateTime startDate, DateTime endDate);
-        Task GetByMemberIdAsync(int memberId);
+        Task<List<Invoice>> GetByMemberIdAsync(int memberId);
 
     }
 }

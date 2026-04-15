@@ -26,6 +26,10 @@ namespace FitControl.Domain.Entities
             Status = MembershipStatus.Active;
         }
 
+
+
+        public MembershipStatus GetStatus() => Status;  
+
         public void MarkAsActive() => Status = MembershipStatus.Active;
         public void MarkAsInactive() => Status = MembershipStatus.Inactive;
         public void MarkAsExpired() => Status = MembershipStatus.Expired;

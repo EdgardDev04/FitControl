@@ -36,6 +36,8 @@ namespace FitControl.Domain.Entities
 
         public void UpdatePhone(string phone) => Phone = phone;
 
+        public TrainerStatus GetStatus() => Status;
+
         public void MarkAsActive() => Status = TrainerStatus.Active;
         public void MarkAsInactive() => Status = TrainerStatus.Inactive;
         public void MarkAsSuspended() => Status = TrainerStatus.Suspended;

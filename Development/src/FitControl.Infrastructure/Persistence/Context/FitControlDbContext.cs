@@ -27,7 +27,7 @@ namespace FitControl.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(FitControlDbContext).Assembly);
 
             base.OnModelCreating(modelBuilder);
-        }
+        } 
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {

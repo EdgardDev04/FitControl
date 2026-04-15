@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Behaviors\" />
-    <Folder Include="Mappings\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Features\" />
+    <Folder Include="Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FitControl.Domain\FitControl.Domain.csproj" />
   </ItemGroup>
 
 </Project>

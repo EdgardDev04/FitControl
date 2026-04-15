@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitControl.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1e12f86de72b9f781f8c2f115a9ef2bd8b62e2e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e81c1b058b247e6e29343789c96f6f82054476")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitControl.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitControl.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

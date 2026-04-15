@@ -6,6 +6,7 @@
         Pending = 1,
         PartiallyPaid = 2,
         Paid = 3,
-        Cancelled = 4
+        Cancelled = 4,
+        Overdue = 5
     }
 }

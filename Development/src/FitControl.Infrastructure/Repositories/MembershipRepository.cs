@@ -21,17 +21,19 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(Membership entity) => _context.Memberships.Remove(entity);
 
-        public async Task<IEnumerable<Membership>> GetAllAsync() => await _context.Memberships.ToListAsync();
+        public async Task<IEnumerable<Membership>> GetAllAsync() => await _context.Memberships.AsNoTracking().ToListAsync();
 
         public async Task<Membership?> GetByIdAsync(int id) => await _context.Memberships.FindAsync(id);
 
-        public async Task GetByMemberIdAsync(int memberId) => await _context.Memberships.Where(m => m.MemberId == memberId).ToListAsync();
+        public async Task<List<Membership>> GetAllByMemberIdAsync(int memberId) => await _context.Memberships.AsNoTracking().Where(m => m.MemberId == memberId).ToListAsync();
 
-        public async Task GetByMembershipPlanIdAsync(int membershipPlanId) => await _context.Memberships.Where(m => m.MembershipPlanId == membershipPlanId).ToListAsync();
+        public async Task<Membership?> GetByMemberIdAsync(int memberId) => await _context.Memberships.AsNoTracking().FirstOrDefaultAsync(m => m.MemberId == memberId);
 
-        public async Task GetByRangeDateAsync(DateTime startDate, DateTime endDate) => await _context.Memberships.Where(m => m.StartDate >= startDate && m.EndDate <= endDate).ToListAsync();
+        public async Task<List<Membership>> GetByMembershipPlanIdAsync(int membershipPlanId) => await _context.Memberships.AsNoTracking().Where(m => m.MembershipPlanId == membershipPlanId).ToListAsync();
 
-        public async Task GetByStatusAsync(MembershipStatus status) => await _context.Memberships.Where(m => m.Status == status).ToListAsync();
+        public async Task<List<Membership>> GetByRangeDateAsync(DateTime startDate, DateTime endDate) => await _context.Memberships.AsNoTracking().Where(m => m.StartDate >= startDate && m.EndDate <= endDate).ToListAsync();
+
+        public async Task<List<Membership>> GetByStatusAsync(MembershipStatus status) => await _context.Memberships.AsNoTracking().Where(m => m.Status == status).ToListAsync();
 
         public async Task UpdateAsync(Membership entity) => _context.Memberships.Update(entity);
     }

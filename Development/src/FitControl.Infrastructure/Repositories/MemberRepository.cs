@@ -20,26 +20,18 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(Member entity) => _context.Members.Remove(entity);
 
-        public async Task<IEnumerable<Member>> GetAllAsync() => await _context.Members.ToListAsync();
+        public async Task<IEnumerable<Member>> GetAllAsync() => await _context.Members.AsNoTracking().ToListAsync();
 
-        public async Task GetByDocumentAsync(string document) => await _context.Members.FirstOrDefaultAsync(m => m.DocumentNumber == document);
+        public async Task GetByDocumentAsync(string document) => await _context.Members.AsNoTracking().FirstOrDefaultAsync(m => m.DocumentNumber == document);
 
         public async Task<Member?> GetByIdAsync(int id) => await _context.Members.FindAsync(id);
 
-        public async Task GetByStatusAsync(bool status) => await _context.Members.FirstOrDefaultAsync(m => m.IsActive == status);
+        public async Task GetByStatusAsync(bool status) => await _context.Members.AsNoTracking().FirstOrDefaultAsync(m => m.IsActive == status);
 
-        public async Task<IEnumerable<Member>> GetAllActiveAsync() => await _context.Members.Where(m => m.IsActive == true).ToListAsync();
+        public async Task<IEnumerable<Member>> GetAllActiveAsync() => await _context.Members.AsNoTracking().Where(m => m.IsActive == true).ToListAsync();
 
-        public async Task<IEnumerable<Member>> GetAllInactiveAsync() => await _context.Members.Where(m => m.IsActive == false).ToListAsync();
+        public async Task<IEnumerable<Member>> GetAllInactiveAsync() => await _context.Members.AsNoTracking().Where(m => m.IsActive == false).ToListAsync();
 
-        public Task Update(Member entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(Member entity)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task UpdateAsync(Member entity) => _context.Members.Update(entity);
     }
 }

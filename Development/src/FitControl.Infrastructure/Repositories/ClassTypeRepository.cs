@@ -20,11 +20,11 @@ namespace FitControl.Infrastructure.Repositories
 
         public async Task DeleteAsync(ClassType entity) => _context.ClassTypes.Remove(entity);
 
-        public async Task<IEnumerable<ClassType>> GetAllAsync() => await _context.ClassTypes.ToListAsync();
+        public async Task<IEnumerable<ClassType>> GetAllAsync() => await _context.ClassTypes.AsNoTracking().ToListAsync();
 
         public async Task<ClassType?> GetByIdAsync(int id) => await _context.ClassTypes.FindAsync(id);
 
-        public async Task<ClassType?> GetByNameAsync(string name) => await _context.ClassTypes.FirstOrDefaultAsync(ct => ct.Name == name);
+        public async Task<ClassType?> GetByNameAsync(string name) => await _context.ClassTypes.AsNoTracking().FirstOrDefaultAsync(ct => ct.Name == name);
 
         public async Task UpdateAsync(ClassType entity) => _context.ClassTypes.Update(entity);
     }
