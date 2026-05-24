@@ -8,6 +8,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Attendance> builder)
         {
+            builder.ToTable("Attendances");
+
             builder.HasKey(a => a.Id);
 
             builder.Property(a => a.Id)

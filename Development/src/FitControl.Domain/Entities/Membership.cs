@@ -13,8 +13,7 @@ namespace FitControl.Domain.Entities
         public int MemberId { get; private set; }
         public int MembershipPlanId { get; private set; }
         public int? PromotionId { get; private set; }
-        public IEnumerable<Payment> Payments { get; private set; }
-
+        public ICollection<Payment> Payments { get; private set; }
         public virtual Member Member { get; private set; }
         public virtual MembershipPlan MembershipPlan { get; private set; }
         public virtual Promotion Promotion { get; private set; }

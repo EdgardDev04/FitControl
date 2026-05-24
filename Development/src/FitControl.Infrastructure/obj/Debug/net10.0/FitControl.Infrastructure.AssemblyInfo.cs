@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitControl.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2d1bde864fc6e8d5df5874f1c34f8acb2263a6f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a71565a837d4c9ae8c2d1d5e8cb45bc119304a8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitControl.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitControl.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

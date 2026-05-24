@@ -8,6 +8,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Promotion> builder)
         {
+            builder.ToTable("Promotions");
+
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id)
@@ -19,6 +21,10 @@ namespace FitControl.Infrastructure.Persistence.Configurations
             builder.Property(p => p.Description);
 
             builder.Property(p => p.DiscountPercentage);
+
+            builder.Property(p => p.DiscountAmount);
+
+            builder.Property(p => p.FixedPrice);
 
             builder.Property(p => p.DurationInDays);
 
@@ -34,6 +40,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
                 .WithOne(m => m.Promotion)
                 .HasForeignKey(m => m.PromotionId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasIndex(p => p.Name);
         }
     }
 }

@@ -8,6 +8,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Membership> builder)
         {
+            builder.ToTable("Memberships");
+
             builder.HasKey(m => m.Id);
 
             builder.Property(m => m.Id)
@@ -49,6 +51,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
                 .WithOne(p => p.Membership)
                 .HasForeignKey(p => p.MembershipId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasIndex(m => m.MemberId);
         }
     }
 }

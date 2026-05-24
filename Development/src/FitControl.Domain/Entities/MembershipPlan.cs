@@ -10,8 +10,7 @@ namespace FitControl.Domain.Entities
         public int DurationInDays { get; private set; }
         public bool IsActive { get; private set; } = true;
         public bool IsDeleted { get; private set; } = false;
-
-        public IEnumerable<Membership> Memberships { get; private set; }
+        public ICollection<Membership> Memberships { get; private set; }
         public MembershipPlan() { } 
     }
 }

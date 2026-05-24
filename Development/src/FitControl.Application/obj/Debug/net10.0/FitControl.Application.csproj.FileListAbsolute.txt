@@ -1,0 +1,16 @@
+D:\Projects\FitControl\Development\src\FitControl.Application\bin\Debug\net10.0\FitControl.Application.deps.json
+D:\Projects\FitControl\Development\src\FitControl.Application\bin\Debug\net10.0\FitControl.Application.dll
+D:\Projects\FitControl\Development\src\FitControl.Application\bin\Debug\net10.0\FitControl.Application.pdb
+D:\Projects\FitControl\Development\src\FitControl.Application\bin\Debug\net10.0\FitControl.Domain.dll
+D:\Projects\FitControl\Development\src\FitControl.Application\bin\Debug\net10.0\FitControl.Domain.pdb
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.csproj.AssemblyReference.cache
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.AssemblyInfoInputs.cache
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.AssemblyInfo.cs
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.csproj.CoreCompileInputs.cache
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.sourcelink.json
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitContr.C59686BB.Up2Date
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.dll
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\refint\FitControl.Application.dll
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\FitControl.Application.pdb
+D:\Projects\FitControl\Development\src\FitControl.Application\obj\Debug\net10.0\ref\FitControl.Application.dll
