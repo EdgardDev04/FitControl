@@ -16,12 +16,13 @@ namespace FitControl.Infrastructure.Persistence.Repositories
 
         public async Task AddAsync(Member member) => await _context.Members.AddAsync(member);
         public async Task DeleteAsync(Member member) => _context.Members.Remove(member);
-        public async Task<ICollection<Member>> GetActiveMembersAsync() => await _context.Members.Where(m => m.IsActive == true).ToListAsync();
+        public async Task<ICollection<Member>> GetAllActiveAsync() => await _context.Members.Where(m => m.IsActive == true).ToListAsync();
         public async Task<IEnumerable<Member>> GetAllAsync() => await _context.Members.ToListAsync();
+        public async Task<ICollection<Member>> GetAllByDateRangeAsync(DateTime startDate, DateTime endDate) => await _context.Members.Where(m => m.CreatedAt >= startDate && m.CreatedAt <= endDate).ToListAsync();
+        public async Task<ICollection<Member>> GetAllInactiveAsync() => await _context.Members.Where(m => m.IsActive == false).ToListAsync();
+        public async Task<Member?> GetByEmailAsync(string email) => await _context.Members.FirstOrDefaultAsync(m => m.Email.Value == email);
         public async Task<Member?> GetByIdAsync(int id) => await _context.Members.FindAsync(id);
-        public async Task<Member?> GetByNameAsync(string name) => await _context.Members.FirstOrDefaultAsync(m => m.FirstName == name);
-        public async Task<ICollection<Member>> GetInactiveMembersAsync() => await _context.Members.Where(m => m.IsActive == false).ToListAsync();
-        public async Task<ICollection<Member>> GetMembersByDateRangeAsync(DateTime startDate, DateTime endDate) => await _context.Members.Where(m => m.CreatedAt >= startDate && m.CreatedAt <= endDate).ToListAsync();
+        public async Task<Member?> GetByNameAsync(string name) => await _context.Members.FirstOrDefaultAsync(m => m.FirstName == name || m.LastName == name);
         public async Task UpdateAsync(Member member) => _context.Members.Update(member);
         
     }

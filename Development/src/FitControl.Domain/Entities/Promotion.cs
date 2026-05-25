@@ -6,9 +6,9 @@ namespace FitControl.Domain.Entities
     {
         public string Name { get; private set; } 
         public string Description { get; private set; }
-        public decimal? DiscountPercentage { get; set; }
-        public decimal? DiscountAmount { get; set; }
-        public decimal? FixedPrice { get; set; }
+        public decimal? DiscountPercentage { get; private set; }
+        public decimal? DiscountAmount { get; private set; }
+        public decimal? FixedPrice { get; private set; }
         public int DurationInDays { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }

@@ -7,7 +7,7 @@ namespace FitControl.Application.Interfaces.Repositories
     {
         Task<MembershipPlan> GetByNameAsync(string name);
         Task<ICollection<MembershipPlan>> GetByPriceRangeAsync(decimal minPrice, decimal maxPrice);
-        Task<ICollection<MembershipPlan>> GetInactiveMembershipPlansAsync();
-        Task<ICollection<MembershipPlan>> GetActiveMembershipPlansAsync();
+        Task<ICollection<MembershipPlan>> GetAllInactiveAsync();
+        Task<ICollection<MembershipPlan>> GetAllActiveAsync();
     }
 }

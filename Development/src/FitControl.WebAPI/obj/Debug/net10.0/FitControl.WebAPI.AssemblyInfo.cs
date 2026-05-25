@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitControl.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a71565a837d4c9ae8c2d1d5e8cb45bc119304a8b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11f6e4fb2a7db5c632dc6fe3d98f109057a81962")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitControl.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitControl.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

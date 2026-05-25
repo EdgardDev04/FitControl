@@ -6,8 +6,9 @@ namespace FitControl.Application.Interfaces.Repositories
     public interface IMemberRepository : IRepositoryBase<Member>
     {
         Task<Member> GetByNameAsync(string name);
-        Task<ICollection<Member>> GetActiveMembersAsync();
-        Task<ICollection<Member>> GetInactiveMembersAsync();
-        Task<ICollection<Member>> GetMembersByDateRangeAsync(DateTime startDate, DateTime endDate);
+        Task<Member> GetByEmailAsync(string email);
+        Task<ICollection<Member>> GetAllActiveAsync();
+        Task<ICollection<Member>> GetAllInactiveAsync();
+        Task<ICollection<Member>> GetAllByDateRangeAsync(DateTime startDate, DateTime endDate);
     }
 }

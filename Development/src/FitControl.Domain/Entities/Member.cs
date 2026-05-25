@@ -1,5 +1,5 @@
 ﻿using FitControl.Domain.Common;
-using FitControl.Domain.Enums;
+using FitControl.Domain.Enums; 
 using FitControl.Domain.ValueObject;
 
 namespace FitControl.Domain.Entities

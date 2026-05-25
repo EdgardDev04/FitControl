@@ -3,70 +3,10 @@
   "WorkspaceRootPath": "D:\\Projects\\FitControl\\Development\\sln\\FitControl\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\userroleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AE3D289F-CC4A-5944-F778-682E273D68B1}|..\\..\\src\\FitControl.Application\\FitControl.Application.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.application\\mappings\\memberprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\roleconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\promotionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\context\\fitcontroldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\paymentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\membershipplanconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\membershipconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\memberconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\configurations\\attendanceconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE3D289F-CC4A-5944-F778-682E273D68B1}|..\\..\\src\\FitControl.Application\\FitControl.Application.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80962FD7-693B-A3D6-E42B-77279F242651}|..\\..\\src\\FitControl.WebAPI\\FitControl.WebAPI.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\membershipplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\promotionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\membershiprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\memberrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0A4121-1830-E199-3829-D9CFFBEA4BAD}|..\\..\\src\\FitControl.Infrastructure\\FitControl.Infrastructure.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.infrastructure\\persistence\\repositories\\attendancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AE3D289F-CC4A-5944-F778-682E273D68B1}|..\\..\\src\\FitControl.Application\\FitControl.Application.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.application\\interfaces\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1DC02F1F-3A28-E87A-EEA3-A80E3ED46B0C}|..\\..\\src\\FitControl.Domain\\FitControl.Domain.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1DC02F1F-3A28-E87A-EEA3-A80E3ED46B0C}|..\\..\\src\\FitControl.Domain\\FitControl.Domain.csproj|d:\\projects\\fitcontrol\\development\\src\\fitcontrol.domain\\entities\\promotion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -80,279 +20,29 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RoleConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\RoleConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\RoleConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\RoleConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\RoleConfiguration.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwBYAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:39:08.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRoleConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserRoleConfiguration.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwBQAAAAsAAAAAAAAAA==",
+              "Title": "MemberProfile.cs",
+              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\Mappings\\MemberProfile.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Application\\Mappings\\MemberProfile.cs",
+              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\Mappings\\MemberProfile.cs",
+              "RelativeToolTip": "..\\..\\src\\FitControl.Application\\Mappings\\MemberProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:38:58.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FitControlDbContext.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Context\\FitControlDbContext.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Context\\FitControlDbContext.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Context\\FitControlDbContext.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Context\\FitControlDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:34:56.652Z",
+              "WhenOpened": "2026-05-25T18:56:04.187Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\UserConfiguration.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:32:52.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PromotionConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PromotionConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PromotionConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PromotionConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PromotionConfiguration.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwCsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:32:43.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PaymentConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PaymentConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PaymentConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PaymentConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\PaymentConfiguration.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAYwCgAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:32:34.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AttendanceConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\AttendanceConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\AttendanceConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\AttendanceConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\AttendanceConfiguration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:32:17.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MembershipPlanConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipPlanConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipPlanConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipPlanConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipPlanConfiguration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:31:21.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MembershipConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MembershipConfiguration.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwAoAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T14:30:45.14Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MemberConfiguration.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MemberConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MemberConfiguration.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MemberConfiguration.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Configurations\\MemberConfiguration.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAgwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T03:02:40.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.WebAPI\\Program.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.WebAPI\\Program.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.WebAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T02:43:35.577Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T02:45:22.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Application\\DependencyInjection.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\DependencyInjection.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Application\\DependencyInjection.cs",
+              "Title": "Promotion.cs",
+              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Domain\\Entities\\Promotion.cs",
+              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Domain\\Entities\\Promotion.cs",
+              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Domain\\Entities\\Promotion.cs",
+              "RelativeToolTip": "..\\..\\src\\FitControl.Domain\\Entities\\Promotion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T02:45:14.615Z",
+              "WhenOpened": "2026-05-25T18:51:16.736Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Domain\\Entities\\User.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T16:47:42.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\Interfaces\\Repositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Application\\Interfaces\\Repositories\\IUserRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Application\\Interfaces\\Repositories\\IUserRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Application\\Interfaces\\Repositories\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-23T16:47:01.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:18:26.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PromotionRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PromotionRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PromotionRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PromotionRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PromotionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwCEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:18:20.404Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PaymentRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PaymentRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PaymentRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PaymentRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\PaymentRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAADwvx4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:18:13.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MembershipRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:18:07.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MembershipPlanRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipPlanRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipPlanRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipPlanRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MembershipPlanRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAACeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:18:01.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MemberRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MemberRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MemberRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MemberRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\MemberRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:17:58.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AttendanceRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\AttendanceRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\AttendanceRepository.cs",
-              "ToolTip": "D:\\Projects\\FitControl\\Development\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\AttendanceRepository.cs",
-              "RelativeToolTip": "..\\..\\src\\FitControl.Infrastructure\\Persistence\\Repositories\\AttendanceRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T23:17:56.843Z"
             }
           ]
         }

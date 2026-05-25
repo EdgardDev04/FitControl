@@ -17,6 +17,7 @@ namespace FitControl.Infrastructure.Persistence.Repositories
         public async Task AddAsync(Attendance attendance) => await _context.Attendances.AddAsync(attendance);
         public async Task DeleteAsync(Attendance attendance) => _context.Attendances.Remove(attendance);
         public async Task<IEnumerable<Attendance>> GetAllAsync() => await _context.Attendances.ToListAsync();
+        public async Task<ICollection<Attendance>> GetAllByMemberIdAsync(int memberId) => await _context.Attendances.Where(a => a.MemberId == memberId).ToListAsync();
         public async Task<Attendance?> GetByIdAsync(int id) => await _context.Attendances.FindAsync(id);
         public async Task UpdateAsync(Attendance attendance) => _context.Attendances.Update(attendance);
         

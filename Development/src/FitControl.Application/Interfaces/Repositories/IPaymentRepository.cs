@@ -6,12 +6,13 @@ namespace FitControl.Application.Interfaces.Repositories
 {
     public interface IPaymentRepository : IRepositoryBase<Payment>
     {
+        Task<Payment> GetbyMemberIdAsync (int memberId);
         Task<Payment> GetByAmountAsync(decimal amount);
         Task<Payment> GetByDateAsync(DateTime date);
-        Task<ICollection<Payment>> GetByPaymentDateRangeAsync(DateTime startDate, DateTime endDate);
-        Task<ICollection<Payment>> GetByMethodAsync(PaymentMethod method);
-        Task<ICollection<Payment>> GetByStatusAsync(PaymentStatus status);
-        Task<ICollection<Payment>> GetByRangeAmountAsync(decimal minAmount, decimal maxAmount);
-        Task<ICollection<Payment>> GetPaymentsByUserIdAsync(int userId);
+        Task<ICollection<Payment>> GetAllByDateRangeAsync(DateTime startDate, DateTime endDate);
+        Task<ICollection<Payment>> GetAllByMethodAsync(PaymentMethod method);
+        Task<ICollection<Payment>> GetAllByStatusAsync(PaymentStatus status);
+        Task<ICollection<Payment>> GetAllByRangeAmountAsync(decimal minAmount, decimal maxAmount);
+        Task<ICollection<Payment>> GetAllByUserIdAsync(int memberId);
     }
 }

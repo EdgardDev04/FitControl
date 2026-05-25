@@ -6,10 +6,10 @@ namespace FitControl.Application.Interfaces.Repositories
 {
     public interface IMembershipRepository : IRepositoryBase<Membership>
     {
-        Task<ICollection<Membership>> GetMembershipsByMembershipPlanIdAsync(int membershipPlanId);
-        Task<ICollection<Membership>> GetMembershipsByMemberIdAsync(int memberId);
-        Task<ICollection<Membership>> GetMembershipsByStatusAsync(MembershipStatus status);
-        Task<ICollection<Membership>> GetMembershipByDateAsync(DateTime startdate, DateTime enddate);
+        Task<ICollection<Membership>> GetByMembershipPlanIdAsync(int membershipPlanId);
+        Task<ICollection<Membership>> GetByMemberIdAsync(int memberId);
+        Task<ICollection<Membership>> GetAllByStatusAsync(MembershipStatus status);
+        Task<ICollection<Membership>> GetAllByDateAsync(DateTime startdate, DateTime enddate);
 
     }
 }

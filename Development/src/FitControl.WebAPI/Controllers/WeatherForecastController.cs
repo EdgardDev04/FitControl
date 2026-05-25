@@ -11,7 +11,12 @@ namespace FitControl.WebAPI.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         ];
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        /// <summary>
+        ///  This endpoint return hello
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpGet(Name = "GetWeatherForecast")] 
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
