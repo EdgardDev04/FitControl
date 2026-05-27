@@ -5,7 +5,7 @@ using FitControl.Infrastructure.Persistence.Context;
 
 namespace FitControl.Infrastructure.Persistence.Repositories
 {
-    public class PromotionRepository : IPromotionRepository
+    internal class PromotionRepository : IPromotionRepository
     {
         private readonly FitControlDbContext _context;
 

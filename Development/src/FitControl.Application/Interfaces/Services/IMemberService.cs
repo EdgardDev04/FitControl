@@ -4,7 +4,7 @@ namespace FitControl.Application.Interfaces.Services
 {
     public interface IMemberService
     {
-        Task CreateMemberAsync(CreateMemberDto dto);
+        Task<MemberDto> CreateMemberAsync(CreateMemberDto dto);
         Task UpdateMemberAsync(int id, UpdateMemberDto dto);
         Task DeleteMemberAsync(int id);
         Task<MemberDto> GetMemberByIdAsync(int id);

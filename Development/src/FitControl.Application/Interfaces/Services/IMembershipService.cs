@@ -5,7 +5,7 @@ namespace FitControl.Application.Interfaces.Services
 {
     public interface IMembershipService
     {
-        Task CreateMembershipAsync(CreateMembershipDto dto);
+        Task<MembershipDto> CreateMembershipAsync(CreateMembershipDto dto);
         Task DeleteMembershipAsync(int id);
         Task UpdateMembershipAsync(int id, UpdateMembershipDto dto);
         Task<MembershipDto> GetMembershipAsync(int id);

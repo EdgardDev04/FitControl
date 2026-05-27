@@ -5,7 +5,7 @@ using FitControl.Infrastructure.Persistence.Context;
 
 namespace FitControl.Infrastructure.Persistence.Repositories
 {
-    public class MemberRepository : IMemberRepository
+    internal class MemberRepository : IMemberRepository
     {
         private readonly FitControlDbContext _context;
 

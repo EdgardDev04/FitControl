@@ -28,6 +28,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
 
             builder.Property(p => p.DurationInDays);
 
+            builder.Property(p => p.Status);
+
             builder.Property(p => p.StartDate);
 
             builder.Property(p => p.EndDate);

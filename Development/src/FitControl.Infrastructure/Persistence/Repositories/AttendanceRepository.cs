@@ -5,7 +5,7 @@ using FitControl.Infrastructure.Persistence.Context;
 
 namespace FitControl.Infrastructure.Persistence.Repositories
 {
-    public class AttendanceRepository : IAttendanceRepository
+    internal class AttendanceRepository : IAttendanceRepository
     {
         private readonly FitControlDbContext _context;
 

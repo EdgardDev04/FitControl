@@ -18,13 +18,15 @@ namespace FitControl.Application.Services
             _mapper = mapper;
         }
 
-        public async Task CreateMembershipAsync(CreateMembershipDto dto)
+        public async Task<MembershipDto> CreateMembershipAsync(CreateMembershipDto dto)
         {
             var membership = _mapper.Map<Membership>(dto);
 
             await _unitOfWork.Memberships.AddAsync(membership);
 
             await _unitOfWork.SaveChangesAsync();
+            
+            return _mapper.Map<MembershipDto>(membership);
         }
 
         public async Task DeleteMembershipAsync(int id)

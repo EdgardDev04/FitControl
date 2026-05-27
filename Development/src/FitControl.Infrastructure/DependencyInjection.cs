@@ -1,4 +1,6 @@
-﻿using FitControl.Application.Interfaces.Repositories;
+﻿using FitControl.Application.Interfaces;
+using FitControl.Application.Interfaces.Repositories;
+using FitControl.Infrastructure.Persistence;
 using FitControl.Infrastructure.Persistence.Context;
 using FitControl.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +24,8 @@ namespace FitControl.Infrastructure
             services.AddScoped<IPromotionRepository, PromotionRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
             return services;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using FitControl.Domain.Common;
+using FitControl.Domain.Enums;
 
 namespace FitControl.Domain.Entities
 {
@@ -10,6 +11,7 @@ namespace FitControl.Domain.Entities
         public decimal? DiscountAmount { get; private set; }
         public decimal? FixedPrice { get; private set; }
         public int DurationInDays { get; private set; }
+        public PromotionStatus Status { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
         public bool IsDeleted { get; private set; } = false;

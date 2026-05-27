@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using AutoMapper.Execution;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
+using FitControl.Domain.Entities;
+using FitControl.Domain.Enums;
 
 namespace FitControl.Application.Services
 {
@@ -16,54 +19,106 @@ namespace FitControl.Application.Services
             _mapper = mapper;
         }
 
-        public Task CreatePromotionAsync(CreatePromotionDto dto)
+        public async Task<PromotionDto> CreatePromotionAsync(CreatePromotionDto dto)
+        {
+            var promotion = _mapper.Map<Promotion>(dto);
+
+            await _unitOfWork.Promotions.AddAsync(promotion);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            return _mapper.Map<PromotionDto>(promotion);
+        }
+
+        public async Task DeletePromotionAsync(int id)
+        {
+            var promotion = await _unitOfWork.Promotions.GetByIdAsync(id);
+
+            if (promotion == null)
+            {
+                return;
+            }
+
+            await _unitOfWork.Promotions.DeleteAsync(promotion);
+
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<ICollection<PromotionDto>> GetActivePromotionsAsync()
+        {
+            var activePromotions = await _unitOfWork.Promotions.GetAllActiveAsync();
+
+            if (activePromotions == null)
+            {
+                return new List<PromotionDto>();
+            }
+
+            return _mapper.Map<ICollection<PromotionDto>>(activePromotions);
+        }
+
+        public async Task<ICollection<PromotionDto>> GetAllPromotionsAsync()
+        {
+            var promotions = await _unitOfWork.Promotions.GetAllAsync();
+
+            if (promotions == null)
+            {
+                return new List<PromotionDto>();
+            }
+
+            return _mapper.Map<ICollection<PromotionDto>>(promotions);
+        }
+
+        public async Task<PromotionDto> GetPromotionByIdAsync(int id)
+        { 
+            var promotion = await _unitOfWork.Promotions.GetByIdAsync(id);
+
+            if ( promotion == null)
+            {
+                throw new KeyNotFoundException("Promotions is not found");
+            }
+
+            return _mapper.Map<PromotionDto>(promotion);
+        }
+
+        public async Task<ICollection<PromotionDto>> GetPromotionsByDateRangeAsync(DateTime startDate, DateTime endDate)
+        {
+            var promotions = await _unitOfWork.Promotions.GetAllByDateRangeAsync(startDate, endDate);
+
+            if (promotions == null)
+            {
+                return new List<PromotionDto>();
+            }
+
+            return _mapper.Map<ICollection<PromotionDto>>(promotions);
+        }
+
+        public async Task<ICollection<PromotionDto>> GetPromotionsByMembershipPlanIdAsync(int membershipPlanId)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeletePromotionAsync(int id)
+        public async Task<ICollection<PromotionDto>> GetPromotionsByStatusAsync(PromotionStatus status)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<PromotionDto>> GetActivePromotionsAsync()
+        public async Task<ICollection<PromotionDto>> GetPromotionsByUserIdAsync(int userId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ICollection<PromotionDto>> GetAllPromotionsAsync()
+        public async Task UpdatePromotionAsync(int Id, UpdatePromotionDto dto)
         {
-            throw new NotImplementedException();
-        }
+            var promotion =  await _unitOfWork.Promotions.GetByIdAsync(Id);
+            
+            if (promotion == null)
+            {
+                throw new KeyNotFoundException();
+            }
 
-        public Task<PromotionDto> GetPromotionByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
+            _mapper.Map(dto, promotion);
 
-        public Task<ICollection<PromotionDto>> GetPromotionsByDateRangeAsync(DateTime startDate, DateTime endDate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICollection<PromotionDto>> GetPromotionsByMembershipPlanIdAsync(int membershipPlanId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICollection<PromotionDto>> GetPromotionsByStatusAsync(string status)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICollection<PromotionDto>> GetPromotionsByUserIdAsync(int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdatePromotionAsync(UpdatePromotionDto dto)
-        {
-            throw new NotImplementedException();
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

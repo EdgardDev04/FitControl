@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 
 namespace FitControl.Infrastructure.Persistence
 {
-    public class UnitOfWork : IUnitOfWork
+    internal class UnitOfWork : IUnitOfWork
     {
         private readonly FitControlDbContext _context;
         private IDbContextTransaction? _currentTransaction;

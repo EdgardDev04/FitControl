@@ -1,19 +1,23 @@
+using FitControl.Application;
 using FitControl.Infrastructure;
+using FitControl.WebAPI.Extensions;
 using Microsoft.OpenApi;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace FitControl.WebAPI
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
-            builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
 
             builder.Services.AddOpenApi();
             builder.Services.AddEndpointsApiExplorer();
@@ -31,10 +35,12 @@ namespace FitControl.WebAPI
             });
 
             builder.Services.AddInfrastructure(builder.Configuration);
+            builder.Services.AddApplicationServices();
 
             var app = builder.Build();
+            
+            app.UseCustomMiddlewares();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
@@ -44,8 +50,9 @@ namespace FitControl.WebAPI
 
             app.UseHttpsRedirection();
 
+            app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

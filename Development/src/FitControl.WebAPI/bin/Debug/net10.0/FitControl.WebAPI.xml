@@ -4,12 +4,6 @@
         <name>FitControl.WebAPI</name>
     </assembly>
     <members>
-        <member name="M:FitControl.WebAPI.Controllers.WeatherForecastController.Get">
-            <summary>
-             This endpoint return hello
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
             <summary>
             Generates a documentation comment ID for a type.

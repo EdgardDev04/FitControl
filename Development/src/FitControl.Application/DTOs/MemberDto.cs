@@ -1,9 +1,8 @@
-﻿using FitControl.Domain.Entities;
-
-namespace FitControl.Application.DTOs
+﻿namespace FitControl.Application.DTOs
 {
-    public class MemberDto
+    public record MemberDto
     {
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -20,7 +19,7 @@ namespace FitControl.Application.DTOs
         public ICollection<MembershipDto?> Memberships { get; set; }
     }
 
-    public class CreateMemberDto
+    public record CreateMemberDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -31,7 +30,7 @@ namespace FitControl.Application.DTOs
         public string Gender { get; set; }
     }
 
-    public class UpdateMemberDto
+    public record UpdateMemberDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -6,7 +6,7 @@ using FitControl.Domain.Enums;
 
 namespace FitControl.Infrastructure.Persistence.Repositories
 {
-    public class PaymentRepository : IPaymentRepository
+    internal class PaymentRepository : IPaymentRepository
     {
         private readonly FitControlDbContext _context;
 

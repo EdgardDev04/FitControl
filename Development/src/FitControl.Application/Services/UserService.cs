@@ -21,7 +21,7 @@ namespace FitControl.Application.Services
             throw new NotImplementedException();
         }
 
-        public Task CreateUserAsync(CreateUserDto dto)
+        public Task<UserDto> CreateUserAsync(CreateUserDto dto)
         {
             throw new NotImplementedException();
         }
