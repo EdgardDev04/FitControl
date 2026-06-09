@@ -169,4 +169,7 @@ D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\Swash
 D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\FitControl.WebAPI.xml
 D:\Projects\FitControl\Development\src\FitControl.WebAPI\obj\Debug\net10.0\FitControl.WebAPI.xml
+D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\FluentValidation.dll
+D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\Scrutor.dll
+D:\Projects\FitControl\Development\src\FitControl.WebAPI\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Projects\FitControl\Development\src\FitControl.WebAPI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -14,5 +14,17 @@ namespace FitControl.Domain.Entities
         public virtual Member Member { get; private set; }
         public virtual Membership Membership { get; private set; }
         public Payment() { }
+
+        public Payment(decimal amount, PaymentMethod method, int memberId, int membershipId)
+        {
+            Amount = amount;
+            Method = method;
+            MemberId = memberId;
+            MembershipId = membershipId;
+            PaidAt = DateTime.Now;
+            Status = PaymentStatus.Pending;
+        }
+
+
     }
 }

@@ -13,6 +13,10 @@ namespace FitControl.Application.Mappings
             CreateMap<MemberDto,CreateMemberDto>().ReverseMap();
 
             CreateMap<MemberDto, UpdateMemberDto>().ReverseMap();
+
+            CreateMap<CreateMemberDto, Member>().ReverseMap();
+
+            CreateMap<UpdateMemberDto, Member>().ReverseMap();
         }
     }
 }

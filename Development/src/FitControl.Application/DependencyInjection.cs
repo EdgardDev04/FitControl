@@ -1,7 +1,9 @@
 ﻿using FitControl.Application.Interfaces.Services;
 using FitControl.Application.Mappings;
 using FitControl.Application.Services;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace FitControl.Application
 {
@@ -11,9 +13,13 @@ namespace FitControl.Application
         {
             services.AddAutoMapper(cfg =>
             {
+                cfg.AddProfile<AttendanceProfile>();
                 cfg.AddProfile<MemberProfile>();
                 cfg.AddProfile<MembershipPlanProfile>();
                 cfg.AddProfile<MembershipProfile>();
+                cfg.AddProfile<PaymentProfile>();
+                cfg.AddProfile<PromotionProfile>();
+                cfg.AddProfile<UserProfile>(); 
             });
 
             services.AddScoped<IAttendanceService, AttendanceService>();
@@ -23,6 +29,9 @@ namespace FitControl.Application
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IPromotionService, PromotionService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IRoleService, RoleService>();
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), includeInternalTypes: true);
 
             return services;
         }

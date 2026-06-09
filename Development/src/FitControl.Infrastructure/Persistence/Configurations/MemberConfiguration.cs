@@ -20,6 +20,12 @@ namespace FitControl.Infrastructure.Persistence.Configurations
 
             builder.Property(m => m.LastName);
 
+            builder.Property(m => m.FullName);
+
+            builder.Property(m => m.DocumentNumber);
+
+            builder.Property(m => m.DocumentType);
+
             builder.OwnsOne(m => m.Email, email =>
             {
                 email.Property(e => e.Value)
@@ -66,6 +72,8 @@ namespace FitControl.Infrastructure.Persistence.Configurations
             builder.HasIndex(m => m.FirstName);
 
             builder.HasIndex(m => m.LastName);
+
+            builder.Ignore(x => x.FullName);
 
         }
     }

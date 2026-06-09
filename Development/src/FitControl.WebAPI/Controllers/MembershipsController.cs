@@ -16,12 +16,12 @@ namespace FitControl.WebAPI.Controllers
             _membershipService = membershipService;
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteMemberships([FromRoute] int id)
+        [HttpGet]
+        public async Task<IActionResult> GetAllMemberships()
         {
-            await _membershipService.DeleteMembershipAsync(id);
+            var memberships = await _membershipService.GetAllMembershipAsync();
 
-            return NoContent();
+            return Ok(memberships);
         }
 
         [HttpGet("{id:int}")]
@@ -32,26 +32,42 @@ namespace FitControl.WebAPI.Controllers
             return Ok(membership);
         }
 
-        [HttpGet] 
-        public async Task<IActionResult> GetAllMemberships()
+        [HttpGet("membership-plan/{membershipPlanId:int}")]
+        public async Task<IActionResult> GetAllMembershipsByMembershipPlan([FromRoute] int membershipPlanId)
         {
-            var memberships = await _membershipService.GetAllMembershipAsync();
+            var memberships = await _membershipService.GetMembershipsByMembershipPlanIdAsync(membershipPlanId);
 
             return Ok(memberships);
         }
 
         [HttpGet("status/{status}")]
-        public async Task<IActionResult> GetAllMembershipsByStatus(MembershipStatus status)
+        public async Task<IActionResult> GetAllMembershipsByStatus([FromRoute] MembershipStatus status)
         {
             var memberships = await _membershipService.GetMembershipByStatusAsync(status);
 
             return Ok(memberships);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateMemberships([FromBody] CreateMembershipDto dto)
+        {
+            var createdMembership = await _membershipService.CreateMembershipAsync(dto);
+
+            return CreatedAtAction(nameof(GetMembership), new { id = createdMembership.Id }, createdMembership);
+        }
+
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateMemberships([FromRoute] int id, [FromBody] UpdateMembershipDto dto)
         {
             await _membershipService.UpdateMembershipAsync(id, dto);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteMemberships([FromRoute] int id)
+        {
+            await _membershipService.DeleteMembershipAsync(id);
 
             return NoContent();
         }

@@ -17,14 +17,6 @@ namespace FitControl.WebAPI.Controllers
             _promotionService = promotionService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreatePromotion([FromBody] CreatePromotionDto dto)
-        {
-            await _promotionService.CreatePromotionAsync(dto);
-
-            return Created();
-        }
-
         [HttpGet]
         public async Task<IActionResult> GetAllPromotions()
         {
@@ -36,7 +28,7 @@ namespace FitControl.WebAPI.Controllers
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetPromotion([FromRoute] int id)
         {
-            var promotion = await _promotionService.GetPromotionByIdAsync(id);
+            var promotion = await _promotionService.GetPromotionAsync(id);
 
             return Ok(promotion);
         }
@@ -58,7 +50,7 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet("range")]
-        public async Task<IActionResult> GetAllPromotionsByDateRange(DateTime startDate, DateTime endDate)
+        public async Task<IActionResult> GetAllPromotionsByDateRange([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
         {
             var promotions = await _promotionService.GetPromotionsByDateRangeAsync(startDate, endDate);
 
@@ -66,17 +58,33 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet("status/{status}")]
-        public async Task<IActionResult> GetAllPromotionsByStatus(PromotionStatus status)
+        public async Task<IActionResult> GetAllPromotionsByStatus([FromRoute] PromotionStatus status)
         {
             var promotions = await _promotionService.GetPromotionsByStatusAsync(status);
 
             return Ok(promotions);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreatePromotion([FromBody] CreatePromotionDto dto)
+        {
+            await _promotionService.CreatePromotionAsync(dto);
+
+            return Created();
+        }
+
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdatePromotion([FromRoute] int id, [FromBody] UpdatePromotionDto dto)
         {
             await _promotionService.UpdatePromotionAsync(id, dto);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeletePromotion([FromRoute] int id)
+        {
+            await _promotionService.DeletePromotionAsync(id);
 
             return NoContent();
         }

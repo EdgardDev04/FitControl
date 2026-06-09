@@ -18,6 +18,8 @@ namespace FitControl.Infrastructure.Persistence
         public IPaymentRepository Payments { get; }
         public IPromotionRepository Promotions { get; }
         public IUserRepository Users { get; }
+        public IRoleRepository Roles { get; }
+        public IUserRoleRepository UserRoles { get; }
 
         public UnitOfWork(
             FitControlDbContext context,
@@ -27,7 +29,9 @@ namespace FitControl.Infrastructure.Persistence
             IMembershipRepository memberships,
             IPaymentRepository payments,
             IPromotionRepository promotions,
-            IUserRepository users)
+            IUserRepository users,
+            IRoleRepository roles,
+            IUserRoleRepository userRoles)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
             Attendances = attendances;
@@ -37,6 +41,8 @@ namespace FitControl.Infrastructure.Persistence
             Payments = payments;
             Promotions = promotions;
             Users = users;
+            Roles = roles;
+            UserRoles = userRoles;
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;

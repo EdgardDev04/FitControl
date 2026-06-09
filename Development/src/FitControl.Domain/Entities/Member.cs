@@ -1,6 +1,7 @@
 ﻿using FitControl.Domain.Common;
 using FitControl.Domain.Enums; 
 using FitControl.Domain.ValueObject;
+using System.Diagnostics.SymbolStore;
 
 namespace FitControl.Domain.Entities
 {
@@ -8,6 +9,9 @@ namespace FitControl.Domain.Entities
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
+        public string FullName => $"{FirstName} {LastName}";
+        public string DocumentNumber { get; private set; }
+        public DocumentType DocumentType { get; private set; }
         public Email Email { get; private set; }
         public string PhoneNumber { get; private set; }
         public string EmergencyContact { get; private set; }
@@ -23,5 +27,29 @@ namespace FitControl.Domain.Entities
         public ICollection<Membership?> Memberships { get; private set; }
 
         public Member() { }
+
+        public void ChangeStatus(bool status)
+        {
+            if (IsDeleted)
+            {
+                throw new InvalidOperationException("Deleted members cannot change status.");
+            }
+
+            IsActive = status;
+        }
+
+        public void EnsureCanCheckIn()
+        {
+            if (IsDeleted)
+            {
+                throw new InvalidOperationException("Deleted members cannot check in.");
+            }
+
+            if (!IsActive)
+            {
+                throw new InvalidOperationException("Inactive members cannot check in.");
+            }
+        }
+
     }
 }

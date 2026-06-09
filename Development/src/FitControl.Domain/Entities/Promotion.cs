@@ -15,9 +15,20 @@ namespace FitControl.Domain.Entities
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
         public bool IsDeleted { get; private set; } = false;
-        public bool IsActive { get; private set; }
         public ICollection<Membership?> Memberships { get; private set; }
 
         public Promotion() { }
+
+        public Promotion(string name, string description, decimal? discountPercentage, decimal? discountAmount, decimal? fixedPrice, int durationInDays, DateTime startDate, DateTime endDate)
+        {
+            Name = name;
+            Description = description;
+            DiscountPercentage = discountPercentage;
+            DiscountAmount = discountAmount;
+            FixedPrice = fixedPrice;
+            DurationInDays = durationInDays;
+            StartDate = startDate;
+            EndDate = endDate;
+        }
     }
 }

@@ -17,5 +17,10 @@ namespace FitControl.Domain.Entities
 
         public User() { }
 
+
+        public void ChangePassowrd(string newPassword)
+        {
+            PasswordHash = newPassword;
+        }
     }
 }

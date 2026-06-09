@@ -10,4 +10,34 @@
         public int MemberId { get; private set; }
         public int MembershipId { get; private set; }
     }
+
+    public record PaymentResponseDto
+    { 
+    
+    }
+
+    public record ProcessPaymentDto
+    {
+
+    }
+     
+    public record RefundResponseDto
+    {
+
+    }
+
+    public record RefundRequestDto
+    {
+
+    }
+
+    public record CancelMembershipDto
+    {
+
+    }
+
+    public record RenewMembershipDto
+    {
+
+    }
 }

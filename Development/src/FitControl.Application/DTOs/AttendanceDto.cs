@@ -1,4 +1,4 @@
-﻿namespace FitControl.Application.DTOs
+﻿  namespace FitControl.Application.DTOs
 {
     public record AttendanceDto
     {

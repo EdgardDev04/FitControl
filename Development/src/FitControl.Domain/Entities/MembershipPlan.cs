@@ -13,17 +13,29 @@ namespace FitControl.Domain.Entities
         public ICollection<Membership> Memberships { get; private set; }
         
         public MembershipPlan() { }
+
         public MembershipPlan(string name, string description, decimal price, int durationInDays)
         {
             Name = name;
             Description = description;
             Price = price;
             DurationInDays = durationInDays;
+            IsActive = true;
         }
 
         public void ChangePrice(decimal price)
         {
             Price = price;
+        }
+
+        public void ChangeStatus(bool isActive)
+        {
+            if (IsDeleted)
+            {
+                throw new InvalidOperationException("Deleted membership plans cannot change status.");
+            }
+
+            IsActive = isActive;
         }
     }
 }

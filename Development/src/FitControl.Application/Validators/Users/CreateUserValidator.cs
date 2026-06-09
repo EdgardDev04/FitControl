@@ -1,0 +1,31 @@
+﻿using FitControl.Application.DTOs;
+using FluentValidation;
+
+namespace FitControl.Application.Validators.Users
+{
+    internal class CreateUserValidator : AbstractValidator<CreateUserDto>
+    {
+        public CreateUserValidator() 
+        {
+            RuleFor(x => x.UserName)
+                .NotEmpty()
+                .WithMessage("Username is required.")
+                .MinimumLength(3)
+                .WithMessage("Username must be at least 3 characters long.");
+
+            RuleFor(x => x.PasswordHash)
+                .NotEmpty()
+                .WithMessage("Password is required.")
+                .MinimumLength(6)
+                .WithMessage("Password must be at least 6 characters long.");
+
+            RuleFor(x => x.Email)
+                .NotEmpty()
+                .WithMessage("Email is required.")
+                .EmailAddress()
+                .WithMessage("Invalid email format.");
+
+
+        }
+    }
+}

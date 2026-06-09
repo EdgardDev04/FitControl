@@ -24,4 +24,15 @@
         public string Email { get; set; }
         public bool IsActive { get; set; }
     }
+
+    public record ResetPasswordDto
+    { 
+        public string PasswordHash { get; set; }
+    }
+
+    public record LoginDto
+    {
+        public string UserName { get; set; }
+        public string PasswordHash { get; set; }
+    }
 }

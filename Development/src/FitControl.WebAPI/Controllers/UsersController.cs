@@ -15,7 +15,23 @@ namespace FitControl.WebAPI.Controllers
             _userService = userService;
         }
 
-        [HttpPost("{id:int}")]
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsersAsync();
+
+            return Ok(users);
+        }
+
+        [HttpGet("{userId:int}")]
+        public async Task<IActionResult> GetUsers([FromRoute] int userId)
+        {
+            var users = await _userService.GetUserAsync(userId);
+
+            return Ok(users);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> CreateUser([FromBody] CreateUserDto dto)
         {
             await _userService.CreateUserAsync(dto);
@@ -23,18 +39,26 @@ namespace FitControl.WebAPI.Controllers
             return Created();
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserDto dto)
+        [HttpPut("{userId:int}")]
+        public async Task<IActionResult> UpdateUser([FromRoute] int userId, [FromBody] UpdateUserDto dto)
         {
-            await _userService.UpdateUserAsync(dto);
+            await _userService.UpdateUserAsync(userId, dto);
 
             return NoContent();
         }
 
-        [HttpPatch("{id:int}")  ]
-        public async Task<IActionResult> ChangePassword([FromRoute] int id, [FromBody] string password)
+        [HttpPatch("{userId:int}")  ]
+        public async Task<IActionResult> ChangePassword([FromRoute] int userId, [FromBody] string password)
         {
-            await _userService.ChangePasswordAsync(id, password);
+            await _userService.ChangePasswordAsync(userId, password);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{userId:int}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] int userId)
+        {
+            await _userService.DeleteUserAsync(userId);
 
             return NoContent();
         }

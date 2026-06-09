@@ -18,8 +18,28 @@ namespace FitControl.Application.Services
             _mapper = mapper;
         }
 
+        public Task CancelMembershipAsync(int id, CancelMembershipDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<MembershipDto> CreateMembershipAsync(CreateMembershipDto dto)
         {
+            var member = await _unitOfWork.Members.GetByIdAsync(dto.MemberId);
+            var membershipPlan = await _unitOfWork.MembershipPlans.GetByIdAsync(dto.MembershipPlanId);
+
+            if (membershipPlan == null) 
+                throw new KeyNotFoundException("Membership plan not found");
+
+            if (member == null)
+                throw new KeyNotFoundException("Member not found");
+
+            if (!membershipPlan.IsActive)
+                throw new InvalidOperationException("Membership plan is not active");
+
+            if (!member.IsActive)
+                throw new InvalidOperationException("Member is not active");
+
             var membership = _mapper.Map<Membership>(dto);
 
             await _unitOfWork.Memberships.AddAsync(membership);
@@ -43,6 +63,11 @@ namespace FitControl.Application.Services
             await _unitOfWork.SaveChangesAsync();
         }
 
+        public Task<MembershipDto> GetActiveMembershipByMemberIdAsync(int memberId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ICollection<MembershipDto>> GetAllMembershipAsync()
         {
             var memberships = await _unitOfWork.Memberships.GetAllAsync();
@@ -61,7 +86,7 @@ namespace FitControl.Application.Services
 
             if (membership == null)
             {
-                return null;
+                throw new KeyNotFoundException("Membership not found");
             }
 
             return _mapper.Map<MembershipDto>(membership);
@@ -89,6 +114,11 @@ namespace FitControl.Application.Services
             }
 
             return _mapper.Map<ICollection<MembershipDto>>(memberships);
+        }
+
+        public Task<MembershipDto> RenewMembershipAsync(int id, RenewMembershipDto dto)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdateMembershipAsync(int id, UpdateMembershipDto dto)

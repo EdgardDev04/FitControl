@@ -19,5 +19,20 @@ namespace FitControl.Domain.Entities
         public virtual Promotion Promotion { get; private set; }
 
         public Membership() { }
+
+        public void ChangeStatus(MembershipStatus status)
+        {
+            Status = status;
+        }
+
+        public void MarkAsDeleted()
+        {
+            IsDeleted = true;
+        }
+
+        public void SetAutoRenew(bool autoRenew)
+        {
+            IsAutoRenew = autoRenew;
+        }
     }
 }

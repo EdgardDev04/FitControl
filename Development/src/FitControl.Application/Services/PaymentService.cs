@@ -2,6 +2,7 @@
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
+using FitControl.Domain.Entities;
 
 namespace FitControl.Application.Services
 {
@@ -28,6 +29,18 @@ namespace FitControl.Application.Services
             return _mapper.Map<ICollection<PaymentDto>>(payments);
         }
 
+        public async Task<PaymentDto> GetPaymentAsync(int id)
+        {
+            var payment = await _unitOfWork.Payments.GetByIdAsync(id);
+
+            if (payment == null)
+            {
+                throw new KeyNotFoundException($"Payment not found.");
+            }
+
+            return _mapper.Map<PaymentDto>(payment);
+        }
+
         public async Task<ICollection<PaymentDto>> GetPaymentsByMemberIdAsync(int memberId)
         {
             var payments = await _unitOfWork.Payments.GetbyMemberIdAsync(memberId);
@@ -40,7 +53,12 @@ namespace FitControl.Application.Services
             return _mapper.Map<ICollection<PaymentDto>>(payments);
         }
 
-        public async Task ProcessPaymentAsync(int memberId, decimal amount)
+        public Task<PaymentResponseDto> ProcessPaymentAsync(ProcessPaymentDto dto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<RefundResponseDto> RefundPaymentAsync(int paymentId, RefundRequestDto dto)
         {
             throw new NotImplementedException();
         }

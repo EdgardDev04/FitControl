@@ -10,13 +10,125 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "GetAttendance",
+    "RelativePath": "Attendances/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "DeleteAttendance",
+    "RelativePath": "Attendances/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "RegisterCheckIn",
+    "RelativePath": "Attendances/{memberId}/checkin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "RegisterCheckOut",
+    "RelativePath": "Attendances/{memberId}/checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "GetAttendancesByMemberId",
+    "RelativePath": "Attendances/Member/{memberId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "GetAllAttendancesByDateRange",
+    "RelativePath": "Attendances/range-date",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
-    "Method": "GetAllMembers",
+    "Method": "GetMembers",
     "RelativePath": "Members",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -30,6 +142,22 @@
       {
         "Name": "createMemberDto",
         "Type": "FitControl.Application.DTOs.CreateMemberDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
+    "Method": "GetMember",
+    "RelativePath": "Members/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -74,9 +202,29 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
-    "Method": "GetMember",
-    "RelativePath": "Members/{id}",
+    "Method": "GetActiveMembers",
+    "RelativePath": "Members/active",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
+    "Method": "GetAllMembers",
+    "RelativePath": "Members/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
+    "Method": "ChangeMemberStatus",
+    "RelativePath": "Members/change-status/{id}/{status}",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -84,18 +232,13 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.Boolean",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
-    "Method": "GetActiveMembers",
-    "RelativePath": "Members/active",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -167,6 +310,100 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "GetMembershipPlan",
+    "RelativePath": "MembershipPlan/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "UpdateMembershipPlan",
+    "RelativePath": "MembershipPlan/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "FitControl.Application.DTOs.UpdateMembershipPlanDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "DeleteMembershipPlan",
+    "RelativePath": "MembershipPlan/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "GetActiveMembershipPlans",
+    "RelativePath": "MembershipPlan/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "GetInactiveMembershipPlans",
+    "RelativePath": "MembershipPlan/inactive",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "UpdateMembershipPlanPrice",
+    "RelativePath": "MembershipPlan/update-price/{id}/{price}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "price",
+        "Type": "System.Decimal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
     "Method": "GetAllMemberships",
     "RelativePath": "Memberships",
@@ -178,15 +415,15 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
-    "Method": "DeleteMemberships",
-    "RelativePath": "Memberships/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "CreateMemberships",
+    "RelativePath": "Memberships",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "dto",
+        "Type": "FitControl.Application.DTOs.CreateMembershipDto",
         "IsRequired": true
       }
     ],
@@ -231,6 +468,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
+    "Method": "DeleteMemberships",
+    "RelativePath": "Memberships/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
+    "Method": "GetAllMembershipsByMembershipPlan",
+    "RelativePath": "Memberships/membership-plan/{membershipPlanId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "membershipPlanId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
     "Method": "GetAllMembershipsByStatus",
     "RelativePath": "Memberships/status/{status}",
     "HttpMethod": "GET",
@@ -243,6 +512,58 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
+    "Method": "GetAllPayments",
+    "RelativePath": "Payments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
+    "Method": "GetPayment",
+    "RelativePath": "Payments/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
+    "Method": "GetPaymentsByMemberId",
+    "RelativePath": "Payments/member/{memberId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memberId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
+    "Method": "GetAllPromotions",
+    "RelativePath": "Promotions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -259,16 +580,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
-    "Method": "GetAllPromotions",
-    "RelativePath": "Promotions",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -303,6 +614,22 @@
       {
         "Name": "dto",
         "Type": "FitControl.Application.DTOs.UpdatePromotionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
+    "Method": "DeletePromotion",
+    "RelativePath": "Promotions/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -372,52 +699,52 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
-    "Method": "CreateUser",
-    "RelativePath": "Users/{id}",
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "GetAllRoles",
+    "RelativePath": "Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "CreateRole",
+    "RelativePath": "Roles",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "FitControl.Application.DTOs.CreateUserDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
+        "Name": "roleName",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
-    "Method": "UpdateUser",
-    "RelativePath": "Users/{id}",
-    "HttpMethod": "PUT",
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "GetRoleById",
+    "RelativePath": "Roles/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "FitControl.Application.DTOs.UpdateUserDto",
-        "IsRequired": true
-      },
-      {
         "Name": "id",
-        "Type": "",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
-    "Method": "ChangePassword",
-    "RelativePath": "Users/{id}",
-    "HttpMethod": "PATCH",
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "UpdateRole",
+    "RelativePath": "Roles/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -427,8 +754,182 @@
         "IsRequired": true
       },
       {
+        "Name": "roleName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "DeleteRole",
+    "RelativePath": "Roles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "GetRoleByName",
+    "RelativePath": "Roles/{name}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "RemoveRoleFromUser",
+    "RelativePath": "Roles/users/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "AssignRoleToUser",
+    "RelativePath": "Roles/users/{userId}/assign",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "GetAllUsers",
+    "RelativePath": "Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "CreateUser",
+    "RelativePath": "Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "FitControl.Application.DTOs.CreateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "GetUsers",
+    "RelativePath": "Users/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "UpdateUser",
+    "RelativePath": "Users/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "FitControl.Application.DTOs.UpdateUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "ChangePassword",
+    "RelativePath": "Users/{userId}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
         "Name": "password",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "DeleteUser",
+    "RelativePath": "Users/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

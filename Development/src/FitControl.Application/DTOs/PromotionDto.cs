@@ -1,4 +1,5 @@
 ﻿using AutoMapper.Configuration.Conventions;
+using FitControl.Domain.Enums;
 
 namespace FitControl.Application.DTOs
 {
@@ -13,7 +14,7 @@ namespace FitControl.Application.DTOs
         public int DurationInDays { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public bool IsActive { get; set; }
+        public string Status { get; set; }
     }
 
     public record CreatePromotionDto
@@ -26,6 +27,7 @@ namespace FitControl.Application.DTOs
         public int DurationInDays { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public PromotionStatus Status { get; set; } = PromotionStatus.Active;
     }
 
     public record UpdatePromotionDto
@@ -38,5 +40,11 @@ namespace FitControl.Application.DTOs
         public int DurationInDays { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public PromotionStatus Status { get; set; } 
+    }
+
+    public record PromotionValidationResultDto
+    {
+
     }
 }

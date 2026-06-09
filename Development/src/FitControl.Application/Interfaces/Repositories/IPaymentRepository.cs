@@ -6,6 +6,7 @@ namespace FitControl.Application.Interfaces.Repositories
 {
     public interface IPaymentRepository : IRepositoryBase<Payment>
     {
+        Task<bool> AnyPendingByMemberIdAsync(int memberId);
         Task<Payment> GetbyMemberIdAsync (int memberId);
         Task<Payment> GetByAmountAsync(decimal amount);
         Task<Payment> GetByDateAsync(DateTime date);

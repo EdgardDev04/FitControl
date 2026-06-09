@@ -6,6 +6,8 @@ namespace FitControl.Application.Interfaces.Repositories
 {
     public interface IMembershipRepository : IRepositoryBase<Membership>
     {
+        Task<bool> AnyActiveByMembershipPlanIdAsync(int membershipPlanId);
+        Task<bool> AnyActiveByMemberIdAsync(int memberId);
         Task<ICollection<Membership>> GetByMembershipPlanIdAsync(int membershipPlanId);
         Task<ICollection<Membership>> GetByMemberIdAsync(int memberId);
         Task<ICollection<Membership>> GetAllByStatusAsync(MembershipStatus status);

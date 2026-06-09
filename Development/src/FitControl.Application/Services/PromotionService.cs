@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using AutoMapper.Execution;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -19,8 +18,18 @@ namespace FitControl.Application.Services
             _mapper = mapper;
         }
 
+        public Task<decimal> CalculateDiscountedPriceAsync(decimal basePrice, string promoCode)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<PromotionDto> CreatePromotionAsync(CreatePromotionDto dto)
         {
+            if(await _unitOfWork.Promotions.ExistsByName(dto.Name))
+            {
+                throw new InvalidOperationException("Promotion code already exists.");
+            }
+
             var promotion = _mapper.Map<Promotion>(dto);
 
             await _unitOfWork.Promotions.AddAsync(promotion);
@@ -68,11 +77,11 @@ namespace FitControl.Application.Services
             return _mapper.Map<ICollection<PromotionDto>>(promotions);
         }
 
-        public async Task<PromotionDto> GetPromotionByIdAsync(int id)
-        { 
+        public async Task<PromotionDto> GetPromotionAsync(int id)
+        {
             var promotion = await _unitOfWork.Promotions.GetByIdAsync(id);
 
-            if ( promotion == null)
+            if (promotion == null)
             {
                 throw new KeyNotFoundException("Promotions is not found");
             }
@@ -99,12 +108,14 @@ namespace FitControl.Application.Services
 
         public async Task<ICollection<PromotionDto>> GetPromotionsByStatusAsync(PromotionStatus status)
         {
-            throw new NotImplementedException();
-        }
+            var promotions = await _unitOfWork.Promotions.GetAllByStatusAsync(status);
 
-        public async Task<ICollection<PromotionDto>> GetPromotionsByUserIdAsync(int userId)
-        {
-            throw new NotImplementedException();
+            if ( promotions == null)
+            {
+                return new List<PromotionDto>();
+            }
+
+            return _mapper.Map<ICollection<PromotionDto>>(promotions);
         }
 
         public async Task UpdatePromotionAsync(int Id, UpdatePromotionDto dto)
@@ -116,9 +127,19 @@ namespace FitControl.Application.Services
                 throw new KeyNotFoundException();
             }
 
+            if (await _unitOfWork.Promotions.ExistsByName(dto.Name))
+            {
+                throw new InvalidOperationException("Promotion code already exists.");
+            }
+
             _mapper.Map(dto, promotion);
 
             await _unitOfWork.SaveChangesAsync();
+        }
+
+        public Task<PromotionValidationResultDto> ValidatePromotionCodeAsync(string code, int memberId, int? planId = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -36,8 +36,6 @@ namespace FitControl.Infrastructure.Persistence.Configurations
 
             builder.Property(p => p.IsDeleted);
 
-            builder.Property(p => p.IsActive);
-
             builder.HasMany(p => p.Memberships)
                 .WithOne(m => m.Promotion)
                 .HasForeignKey(m => m.PromotionId)

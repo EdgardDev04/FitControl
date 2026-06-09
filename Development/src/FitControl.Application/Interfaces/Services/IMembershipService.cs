@@ -12,5 +12,9 @@ namespace FitControl.Application.Interfaces.Services
         Task<ICollection<MembershipDto>> GetMembershipByStatusAsync(MembershipStatus status);
         Task<ICollection<MembershipDto>> GetMembershipsByMembershipPlanIdAsync(int membershipPlanId);
         Task<ICollection<MembershipDto>> GetAllMembershipAsync();
+        Task<MembershipDto> GetActiveMembershipByMemberIdAsync(int memberId);
+        Task CancelMembershipAsync(int id, CancelMembershipDto dto); 
+        Task<MembershipDto> RenewMembershipAsync(int id, RenewMembershipDto dto);
+
     }
 }

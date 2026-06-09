@@ -19,6 +19,16 @@ namespace FitControl.Application.Services
 
         public async Task<MembershipPlanDto> CreateMembershipPlanAsync(CreateMembershipPlanDto dto)
         {
+            if (await _unitOfWork.MembershipPlans.ExistByNameAsync(dto.Name))
+            {
+                throw new InvalidOperationException("Membership plan with this name already exists");
+            }
+
+            if (dto.IsActive != true)
+            {
+                throw new InvalidOperationException("New membership plan must be active");
+            }
+
             var membershipPlan = _mapper.Map<MembershipPlan>(dto);
 
             await _unitOfWork.MembershipPlans.AddAsync(membershipPlan);
@@ -34,12 +44,36 @@ namespace FitControl.Application.Services
 
             if (membershipPlan == null)
             {
-                throw new InvalidOperationException("Membership plan not found");
+                throw new KeyNotFoundException("Membership plan not found");
+            }
+
+            if (await _unitOfWork.Memberships.AnyActiveByMembershipPlanIdAsync(id))
+            {
+                throw new InvalidOperationException("Cannot delete membership plan with active memberships");
             }
 
             await _unitOfWork.MembershipPlans.DeleteAsync(membershipPlan);
 
             await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<MembershipPlanDto> DuplicatePlanAsync(int sourcePlanId, string newPlanName)
+        { 
+            var sourcePlan = await _unitOfWork.MembershipPlans.GetByIdAsync(sourcePlanId);
+
+            if (sourcePlan == null)
+                throw new KeyNotFoundException("Source membership plan not found");
+
+            if (await _unitOfWork.MembershipPlans.ExistByNameAsync(newPlanName))
+                throw new InvalidOperationException("Membership plan with this name already exists");
+
+            var newPlan = new MembershipPlan(newPlanName, sourcePlan.Description, sourcePlan.Price, sourcePlan.DurationInDays);
+
+            await _unitOfWork.MembershipPlans.AddAsync(newPlan);
+
+            await _unitOfWork.SaveChangesAsync();
+
+            return _mapper.Map<MembershipPlanDto>(newPlan);
         }
 
         public async Task<ICollection<MembershipPlanDto>> GetActivePlansAsync()
@@ -78,14 +112,12 @@ namespace FitControl.Application.Services
             return _mapper.Map<ICollection<MembershipPlanDto>>(membershipPlans);
         }
 
-        public async Task<MembershipPlanDto> GetMembershipPlanByIdAsync(int id)
+        public async Task<MembershipPlanDto> GetMembershipPlanAsync(int id)
         {
             var membershipPlan = await _unitOfWork.MembershipPlans.GetByIdAsync(id);
 
             if (membershipPlan == null)
-            {
-                return null;
-            }
+                throw new KeyNotFoundException("Membership plan not found");
 
             return _mapper.Map<MembershipPlanDto>(membershipPlan);
         }
@@ -96,8 +128,11 @@ namespace FitControl.Application.Services
 
             if (membershipPlan == null)
             {
-                throw new InvalidOperationException("Membership plan not found");
+                throw new KeyNotFoundException("Membership plan not found");
             }
+
+            if (await _unitOfWork.MembershipPlans.ExistByNameAsync(dto.Name))
+                throw new InvalidOperationException("Membership plan with this name already exists");
 
             _mapper.Map(dto, membershipPlan);
 
@@ -110,8 +145,11 @@ namespace FitControl.Application.Services
 
             if (membershipPlan == null)
             {
-                throw new InvalidOperationException("Membership plan not found");
+                throw new KeyNotFoundException("Membership plan not found");
             }
+
+            if (newPrice <= 0)
+                throw new InvalidOperationException("Price cannot be negative or equal cero");
 
             membershipPlan.ChangePrice(newPrice);
 

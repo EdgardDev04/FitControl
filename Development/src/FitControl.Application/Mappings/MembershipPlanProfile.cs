@@ -13,6 +13,11 @@ namespace FitControl.Application.Mappings
             CreateMap<MembershipPlanDto, CreateMembershipPlanDto>().ReverseMap();
 
             CreateMap<MembershipPlanDto, UpdateMembershipPlanDto>().ReverseMap();
+
+            CreateMap<CreateMembershipPlanDto, MembershipPlan>().ReverseMap();
+
+            CreateMap<UpdateMembershipPlanDto, MembershipPlan>().ReverseMap();
+
         }
     }
 }
