@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 using FitControl.Domain.Enums;
 
 namespace FitControl.Application.Interfaces.Services
@@ -14,6 +15,7 @@ namespace FitControl.Application.Interfaces.Services
         Task<ICollection<PromotionDto>> GetPromotionsByMembershipPlanIdAsync(int membershipPlanId);
         Task<ICollection<PromotionDto>> GetPromotionsByStatusAsync(PromotionStatus status);
         Task<ICollection<PromotionDto>> GetPromotionsByDateRangeAsync(DateTime startDate, DateTime endDate);
+        Task<PagedResult<PromotionDto>> GetPagedPromotionsAsync(PaginationParams paginationParams);
         Task<PromotionValidationResultDto> ValidatePromotionCodeAsync(string code, int memberId, int? planId = null);
         Task<decimal> CalculateDiscountedPriceAsync(decimal basePrice, string promoCode);
     }

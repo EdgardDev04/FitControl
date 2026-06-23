@@ -22,6 +22,16 @@
             return new Email(value);
         }
 
+        public static string GetEmailDomain(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                throw new ArgumentException("Email cannot be null or empty.", nameof(email));
+            var atIndex = email.LastIndexOf('@');
+            if (atIndex < 0 || atIndex == email.Length - 1)
+                throw new ArgumentException("Invalid email format.", nameof(email));
+            return email.Substring(atIndex + 1);
+        }
+
         private static bool IsValidEmail(string value)
         {
             try

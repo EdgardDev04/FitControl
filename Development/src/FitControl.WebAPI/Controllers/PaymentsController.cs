@@ -1,4 +1,6 @@
-﻿using FitControl.Application.Interfaces.Services;
+﻿using FitControl.Application.Common;
+using FitControl.Application.Interfaces.Services;
+using FitControl.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitControl.WebAPI.Controllers
@@ -15,6 +17,14 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetPayments([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _paymentService.GetPagedPaymentsAsync(paginationParams);
+
+            return Ok(result);
+        }
+
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllPayments()
         {
             var payments = await _paymentService.GetAllPaymentsAsync();

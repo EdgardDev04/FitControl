@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 
 namespace FitControl.Application.Interfaces.Services
 {
@@ -11,6 +12,7 @@ namespace FitControl.Application.Interfaces.Services
         Task<ICollection<AttendanceDto>> GetRegisterMembersTodayAsync();
         Task<ICollection<AttendanceDto>> GetAttendanceByMemberIdAsync(int memberId);
         Task<ICollection<AttendanceDto>> GetAttendanceByDateRangeAsync(DateTime startDate, DateTime endDate);
+        Task<PagedResult<AttendanceDto>> GetPagedAttendancesAsync(PaginationParams paginationParams);
         Task DeleteAttendanceAsync(int attendanceId);
     }
 }

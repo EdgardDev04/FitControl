@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -101,6 +102,20 @@ namespace FitControl.Application.Services
             }
 
             return _mapper.Map<RoleDto>(role);
+        }
+
+        public async Task<PagedResult<RoleDto>> GetPagedRolesAsync(PaginationParams paginationParams)
+        {
+            var pagedRoles = await _unitOfWork.Roles.GetPagedAsync(paginationParams);
+
+            return new PagedResult<RoleDto>
+            {
+                Items = _mapper.Map<IEnumerable<RoleDto>>(pagedRoles.Items),
+                PageNumber = pagedRoles.PageNumber,
+                PageSize = pagedRoles.PageSize,
+                TotalCount = pagedRoles.TotalCount,
+                TotalPages = pagedRoles.TotalPages
+            };
         }
 
         public async Task<RoleDto?> GetRoleAsync(int id)

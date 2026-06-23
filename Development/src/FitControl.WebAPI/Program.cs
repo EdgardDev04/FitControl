@@ -21,6 +21,8 @@ namespace FitControl.WebAPI
             })
             .AddJsonOptions(options =>
             {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+
                 options.JsonSerializerOptions.Converters.Add(
                     new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, false));
             });
@@ -51,16 +53,37 @@ namespace FitControl.WebAPI
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
-            });
 
-            builder.Services.AddInfrastructure(builder.Configuration);
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter: Bearer {token}"
+                });
+
+                options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecuritySchemeReference(
+                            "Bearer",
+                            document
+                        ),
+                        new List<string>()
+                    }
+                });
+            });
 
             builder.Services.AddApplicationServices();
 
+            builder.Services.AddInfrastructure(builder.Configuration);
+
+            builder.Services.AddJwtAuthentication(builder.Configuration);
+
             var app = builder.Build();
             
-            app.UseCustomMiddlewares();
-
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
@@ -79,6 +102,8 @@ namespace FitControl.WebAPI
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            app.UseCustomMiddlewares();
 
             app.MapControllers();
 

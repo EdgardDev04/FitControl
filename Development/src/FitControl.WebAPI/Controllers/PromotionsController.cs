@@ -1,5 +1,7 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces.Services;
+using FitControl.Application.Services;
 using FitControl.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
@@ -18,6 +20,14 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetPromotions([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _promotionService.GetPagedPromotionsAsync(paginationParams);
+
+            return Ok(result);
+        }
+
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllPromotions()
         {
             var promotions = await _promotionService.GetAllPromotionsAsync();

@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 using FitControl.Domain.Enums;
 
 namespace FitControl.Application.Interfaces.Services
@@ -11,6 +12,7 @@ namespace FitControl.Application.Interfaces.Services
         Task<MembershipDto> GetMembershipAsync(int id);
         Task<ICollection<MembershipDto>> GetMembershipByStatusAsync(MembershipStatus status);
         Task<ICollection<MembershipDto>> GetMembershipsByMembershipPlanIdAsync(int membershipPlanId);
+        Task<PagedResult<MembershipDto>> GetPagedMembershipsAsync(PaginationParams paginationParams);
         Task<ICollection<MembershipDto>> GetAllMembershipAsync();
         Task<MembershipDto> GetActiveMembershipByMemberIdAsync(int memberId);
         Task CancelMembershipAsync(int id, CancelMembershipDto dto); 

@@ -1,4 +1,6 @@
-﻿using FitControl.Application.Interfaces.Services;
+﻿using FitControl.Application.Common;
+using FitControl.Application.Interfaces.Services;
+using FitControl.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitControl.WebAPI.Controllers
@@ -15,6 +17,14 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetAttendances([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _attendanceService.GetPagedAttendancesAsync(paginationParams);
+
+            return Ok(result);
+        }
+
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllAttendances()
         {
             var attendances = await _attendanceService.GetAllAttendancesAsync();

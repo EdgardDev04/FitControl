@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -114,6 +115,20 @@ namespace FitControl.Application.Services
             }
 
             return _mapper.Map<ICollection<MembershipDto>>(memberships);
+        }
+
+        public async Task<PagedResult<MembershipDto>> GetPagedMembershipsAsync(PaginationParams paginationParams)
+        {
+            var pagedMemberships = await _unitOfWork.Memberships.GetPagedAsync(paginationParams);
+
+            return new PagedResult<MembershipDto>
+            {
+                Items = _mapper.Map<IEnumerable<MembershipDto>>(pagedMemberships.Items),
+                PageNumber = pagedMemberships.PageNumber,
+                PageSize = pagedMemberships.PageSize,
+                TotalCount = pagedMemberships.TotalCount,
+                TotalPages = pagedMemberships.TotalPages
+            };
         }
 
         public Task<MembershipDto> RenewMembershipAsync(int id, RenewMembershipDto dto)

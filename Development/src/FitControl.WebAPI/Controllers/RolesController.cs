@@ -1,4 +1,6 @@
-﻿using FitControl.Application.Interfaces.Services;
+﻿using FitControl.Application.Common;
+using FitControl.Application.Interfaces.Services;
+using FitControl.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitControl.WebAPI.Controllers
@@ -15,6 +17,14 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetRoles([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _roleService.GetPagedRolesAsync(paginationParams);
+
+            return Ok(result);
+        }
+
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllRoles()
         {
             var roles = await _roleService.GetAllRoleAsync();

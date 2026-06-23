@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,14 @@ namespace FitControl.WebAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetUsers([FromQuery] PaginationParams paginationParams)
+        {
+            var result = await _userService.GetPagedUsersAsync(paginationParams);
+
+            return Ok(result);
+        }
+
+        [HttpGet("all")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();

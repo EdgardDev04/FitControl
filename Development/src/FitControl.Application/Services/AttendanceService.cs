@@ -3,6 +3,7 @@ using FitControl.Domain.Entities;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
+using FitControl.Application.Common;
 
 namespace FitControl.Application.Services
 {
@@ -96,6 +97,13 @@ namespace FitControl.Application.Services
                 throw new KeyNotFoundException("Member not found");
             }
 
+            var isActive = await _unitOfWork.Memberships.AnyActiveByMemberIdAsync(memberId);
+
+            if (!isActive)
+            {
+                throw new InvalidOperationException("Member does not have an active membership.");
+            }
+
             member.EnsureCanCheckIn();
 
             var hasActiveAttendance = await _unitOfWork.Attendances.HasAnyActiveAttendanceAsync(memberId);
@@ -146,6 +154,20 @@ namespace FitControl.Application.Services
             await _unitOfWork.Attendances.DeleteAsync(attendance);
 
             await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<PagedResult<AttendanceDto>> GetPagedAttendancesAsync(PaginationParams paginationParams)
+        {
+            var pagedAttendances = await _unitOfWork.Attendances.GetPagedAsync(paginationParams);
+
+            return new PagedResult<AttendanceDto>
+            {
+                Items = _mapper.Map<IEnumerable<AttendanceDto>>(pagedAttendances.Items),
+                PageNumber = pagedAttendances.PageNumber,
+                PageSize = pagedAttendances.PageSize,
+                TotalCount = pagedAttendances.TotalCount,
+                TotalPages = pagedAttendances.TotalPages
+            };
         }
     }
 }

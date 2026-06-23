@@ -14,5 +14,9 @@
                 ? MaxPageSize
                 : value;
         }
+
+        public string? Search { get; init; }
+        public string? SortBy { get; init; }
+        public bool Descending { get; init; }
     }
 }

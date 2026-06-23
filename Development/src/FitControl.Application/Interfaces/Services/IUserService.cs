@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 
 namespace FitControl.Application.Interfaces.Services
 {
@@ -8,11 +9,12 @@ namespace FitControl.Application.Interfaces.Services
         Task UpdateUserAsync(int userId, UpdateUserDto dto);
         Task DeleteUserAsync(int userId);
         Task<bool> ChangePasswordAsync(int userId, string password); 
-        Task<LoginDto> LoginAsync(LoginDto dto);
+        Task<LoginResponseDto> LoginAsync(LoginRequestDto dto);
         Task ForgotPasswordAsync(string email);
         Task<bool> ResetPasswordAsync(ResetPasswordDto dto);
         Task<UserDto> GetUserAsync(int id);
         Task<ICollection<UserDto>> GetAllUsersAsync();
         Task<UserDto> GetUserByEmailAsync(string email);
+        Task<PagedResult<UserDto>> GetPagedUsersAsync(PaginationParams paginationParams);
     }
 }

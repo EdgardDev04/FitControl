@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
-using FitControl.Domain.Entities;
 
 namespace FitControl.Application.Services
 {
@@ -27,6 +27,20 @@ namespace FitControl.Application.Services
             }
 
             return _mapper.Map<ICollection<PaymentDto>>(payments);
+        }
+
+        public async Task<PagedResult<PaymentDto>> GetPagedPaymentsAsync(PaginationParams paginationParams)
+        {
+            var pagedPayments = await _unitOfWork.Payments.GetPagedAsync(paginationParams);
+
+            return new PagedResult<PaymentDto>
+            {
+                Items = _mapper.Map<IEnumerable<PaymentDto>>(pagedPayments.Items),
+                PageNumber = pagedPayments.PageNumber,
+                PageSize = pagedPayments.PageSize,
+                TotalCount = pagedPayments.TotalCount,
+                TotalPages = pagedPayments.TotalPages
+            };
         }
 
         public async Task<PaymentDto> GetPaymentAsync(int id)

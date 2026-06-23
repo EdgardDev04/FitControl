@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 
 namespace FitControl.Application.Interfaces.Services
 {
@@ -12,5 +13,6 @@ namespace FitControl.Application.Interfaces.Services
         Task DeleteRoleAsync(int id);
         Task<bool> AssignRoleToUserAsync(int userId, int roleId);
         Task<bool> RemoveRoleFromUserAsync(int userId, int roleId);
+        Task<PagedResult<RoleDto>> GetPagedRolesAsync(PaginationParams paginationParams);
     }
 }

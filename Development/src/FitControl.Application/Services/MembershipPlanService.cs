@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -120,6 +121,20 @@ namespace FitControl.Application.Services
                 throw new KeyNotFoundException("Membership plan not found");
 
             return _mapper.Map<MembershipPlanDto>(membershipPlan);
+        }
+
+        public async Task<PagedResult<MembershipPlanDto>> GetPagedMembershipPlansAsync(PaginationParams paginationParams)
+        {
+            var pagedMembershipPlans = await _unitOfWork.MembershipPlans.GetPagedAsync(paginationParams);
+
+            return new PagedResult<MembershipPlanDto>
+            {
+                Items = _mapper.Map<IEnumerable<MembershipPlanDto>>(pagedMembershipPlans.Items),
+                PageNumber = pagedMembershipPlans.PageNumber,
+                PageSize = pagedMembershipPlans.PageSize,
+                TotalCount = pagedMembershipPlans.TotalCount,
+                TotalPages = pagedMembershipPlans.TotalPages
+            };
         }
 
         public async Task UpdateMembershipPlanAsync(int id, UpdateMembershipPlanDto dto)

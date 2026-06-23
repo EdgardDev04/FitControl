@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -75,6 +76,20 @@ namespace FitControl.Application.Services
             }
 
             return _mapper.Map<ICollection<PromotionDto>>(promotions);
+        }
+
+        public async Task<PagedResult<PromotionDto>> GetPagedPromotionsAsync(PaginationParams paginationParams)
+        {
+            var pagedPromotions = await _unitOfWork.Promotions.GetPagedAsync(paginationParams);
+
+            return new PagedResult<PromotionDto>
+            {
+                Items = _mapper.Map<IEnumerable<PromotionDto>>(pagedPromotions.Items),
+                PageNumber = pagedPromotions.PageNumber,
+                PageSize = pagedPromotions.PageSize,
+                TotalCount = pagedPromotions.TotalCount,
+                TotalPages = pagedPromotions.TotalPages
+            };
         }
 
         public async Task<PromotionDto> GetPromotionAsync(int id)

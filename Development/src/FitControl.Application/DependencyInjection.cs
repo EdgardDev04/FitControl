@@ -1,4 +1,5 @@
-﻿using FitControl.Application.Interfaces.Services;
+﻿using FitControl.Application.Interfaces;
+using FitControl.Application.Interfaces.Services;
 using FitControl.Application.Mappings;
 using FitControl.Application.Services;
 using FluentValidation;
@@ -20,6 +21,14 @@ namespace FitControl.Application
                 cfg.AddProfile<PaymentProfile>();
                 cfg.AddProfile<PromotionProfile>();
                 cfg.AddProfile<UserProfile>(); 
+            });
+
+            services.AddScoped<AuthService>(provider =>
+            {
+                var jwt = provider.GetRequiredService<IJwtTokenGenerator>();
+                var unit = provider.GetRequiredService<IUnitOfWork>();
+
+                return new AuthService(jwt, unit);
             });
 
             services.AddScoped<IAttendanceService, AttendanceService>();

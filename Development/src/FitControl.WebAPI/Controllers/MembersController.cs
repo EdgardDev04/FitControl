@@ -1,10 +1,12 @@
 ﻿using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FitControl.WebAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class MembersController : ControllerBase
@@ -23,7 +25,6 @@ namespace FitControl.WebAPI.Controllers
 
             return Ok(result);
         }
-
 
         [HttpGet("all")]
         public async Task<IActionResult> GetAllMembers()

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FitControl.Application.Common;
 using FitControl.Application.DTOs;
 using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Services;
@@ -77,6 +78,19 @@ namespace FitControl.Application.Services
             return _mapper.Map<ICollection<UserDto>>(users);
         }
 
+        public async Task<PagedResult<UserDto>> GetPagedUsersAsync(PaginationParams paginationParams)
+        {
+            var pagedUsers = await _unitOfWork.Users.GetPagedAsync(paginationParams);
+
+            return new PagedResult<UserDto>
+            {
+                Items = _mapper.Map<IEnumerable<UserDto>>(pagedUsers.Items),
+                PageNumber = pagedUsers.PageNumber,
+                PageSize = pagedUsers.PageSize,
+                TotalCount = pagedUsers.TotalCount,
+                TotalPages = pagedUsers.TotalPages
+            };
+        }
         public async Task<UserDto> GetUserAsync(int id)
         {
             var user = await _unitOfWork.Users.GetByIdAsync(id);
@@ -101,7 +115,7 @@ namespace FitControl.Application.Services
             return _mapper.Map<UserDto>(user);
         }
 
-        public async Task<LoginDto> LoginAsync(LoginDto dto)
+        public Task<LoginResponseDto> LoginAsync(LoginRequestDto dto)
         {
             throw new NotImplementedException();
         }

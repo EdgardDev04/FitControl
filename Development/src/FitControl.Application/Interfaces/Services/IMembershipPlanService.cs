@@ -1,4 +1,5 @@
-﻿using FitControl.Application.DTOs;
+﻿using FitControl.Application.Common;
+using FitControl.Application.DTOs;
 
 namespace FitControl.Application.Interfaces.Services
 {
@@ -11,6 +12,7 @@ namespace FitControl.Application.Interfaces.Services
         Task<ICollection<MembershipPlanDto>> GetActivePlansAsync();
         Task<ICollection<MembershipPlanDto>> GetInactivePlansAsync();
         Task<ICollection<MembershipPlanDto>> GetAllMembershipPlanAsync();
+        Task<PagedResult<MembershipPlanDto>> GetPagedMembershipPlansAsync(PaginationParams paginationParams);
         Task DeleteMembershipPlanAsync(int id);
         Task<MembershipPlanDto> DuplicatePlanAsync(int sourcePlanId, string newPlanName);
     }

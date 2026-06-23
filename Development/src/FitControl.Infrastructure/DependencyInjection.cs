@@ -1,5 +1,6 @@
 ﻿using FitControl.Application.Interfaces;
 using FitControl.Application.Interfaces.Repositories;
+using FitControl.Infrastructure.Authentication;
 using FitControl.Infrastructure.Persistence;
 using FitControl.Infrastructure.Persistence.Context;
 using FitControl.Infrastructure.Repositories;
@@ -26,6 +27,8 @@ namespace FitControl.Infrastructure
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
+            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
             return services;
         }

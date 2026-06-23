@@ -3,15 +3,17 @@ using FluentValidation;
 
 namespace FitControl.Application.Validators.Users
 {
-    internal class LoginValidator : AbstractValidator<LoginDto>
+    internal class LoginValidator : AbstractValidator<LoginRequestDto>
     {
         public LoginValidator() 
         {
-            RuleFor(x => x.UserName)
+            RuleFor(x => x.Email)
+                .EmailAddress()
+                .WithMessage("Invalid email format.")
                 .NotEmpty()
-                .WithMessage("Username is required.");
+                .WithMessage("Email is required.");
 
-            RuleFor(x => x.PasswordHash)
+            RuleFor(x => x.Password)
                 .NotEmpty()
                 .WithMessage("Password is required.");
         }

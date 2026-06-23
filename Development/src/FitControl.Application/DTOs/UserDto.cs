@@ -1,4 +1,6 @@
-﻿namespace FitControl.Application.DTOs
+﻿using FitControl.Domain.ValueObject;
+
+namespace FitControl.Application.DTOs
 {
     public record UserDto
     {
@@ -30,9 +32,14 @@
         public string PasswordHash { get; set; }
     }
 
-    public record LoginDto
+    public record LoginRequestDto
     {
-        public string UserName { get; set; }
-        public string PasswordHash { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
+    public record LoginResponseDto
+    {
+        public string Token { get; set; }
     }
 }

@@ -1,12 +1,38 @@
 [
   {
     "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
-    "Method": "GetAllAttendances",
+    "Method": "GetAttendances",
     "RelativePath": "Attendances",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -75,6 +101,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
+    "Method": "GetAllAttendances",
+    "RelativePath": "Attendances/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.AttendancesController",
     "Method": "GetAttendancesByMemberId",
     "RelativePath": "Attendances/Member/{memberId}",
     "HttpMethod": "GET",
@@ -111,6 +147,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FitControl.WebAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "FitControl.Application.DTOs.LoginRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "FitControl.WebAPI.Controllers.MembersController",
     "Method": "GetMembers",
     "RelativePath": "Members",
@@ -126,6 +178,21 @@
       {
         "Name": "PageSize",
         "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
         "IsRequired": false
       }
     ],
@@ -285,12 +352,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
-    "Method": "GetAllMembershipPlan",
+    "Method": "GetMembershipPlans",
     "RelativePath": "MembershipPlan",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -374,6 +467,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
+    "Method": "GetAllMembershipPlan",
+    "RelativePath": "MembershipPlan/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipPlanController",
     "Method": "GetInactiveMembershipPlans",
     "RelativePath": "MembershipPlan/inactive",
     "HttpMethod": "GET",
@@ -405,12 +508,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
-    "Method": "GetAllMemberships",
+    "Method": "GetMemberships",
     "RelativePath": "Memberships",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -484,6 +613,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
+    "Method": "GetAllMemberships",
+    "RelativePath": "Memberships/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.MembershipsController",
     "Method": "GetAllMembershipsByMembershipPlan",
     "RelativePath": "Memberships/membership-plan/{membershipPlanId}",
     "HttpMethod": "GET",
@@ -516,12 +655,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
-    "Method": "GetAllPayments",
+    "Method": "GetPayments",
     "RelativePath": "Payments",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -542,6 +707,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
+    "Method": "GetAllPayments",
+    "RelativePath": "Payments/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PaymentsController",
     "Method": "GetPaymentsByMemberId",
     "RelativePath": "Payments/member/{memberId}",
     "HttpMethod": "GET",
@@ -558,12 +733,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
-    "Method": "GetAllPromotions",
+    "Method": "GetPromotions",
     "RelativePath": "Promotions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -647,6 +848,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
+    "Method": "GetAllPromotions",
+    "RelativePath": "Promotions/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.PromotionsController",
     "Method": "GetPromotionsByMembershipPlanId",
     "RelativePath": "Promotions/membership-plan/{membershipPlanId}",
     "HttpMethod": "GET",
@@ -700,12 +911,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
-    "Method": "GetAllRoles",
+    "Method": "GetRoles",
     "RelativePath": "Roles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -795,6 +1032,16 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
+    "Method": "GetAllRoles",
+    "RelativePath": "Roles/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.RolesController",
     "Method": "RemoveRoleFromUser",
     "RelativePath": "Roles/users/{userId}",
     "HttpMethod": "POST",
@@ -837,12 +1084,38 @@
   },
   {
     "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
-    "Method": "GetAllUsers",
+    "Method": "GetUsers",
     "RelativePath": "Users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "SortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descending",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -933,6 +1206,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FitControl.WebAPI.Controllers.UsersController",
+    "Method": "GetAllUsers",
+    "RelativePath": "Users/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
